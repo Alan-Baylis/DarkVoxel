@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
 
     private Transform _playerTransform;
 
-    [SerializeField] private bool _isPositioned = false;
+    private bool _isPositioned = false;
 
     private void Start ( )
     {
