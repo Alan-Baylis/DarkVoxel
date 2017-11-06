@@ -14,12 +14,13 @@ public class EnemyAnimationEvents : MonoBehaviour
     private EnemyStats _enemyStats;
     private Projectile _projectile;
 
+    private GameObject _spawnedRock;
+
     private void Start ( )
     {
         _babyMyconidAI = GetComponent<BabyMyconidAI> ();
         _enemyAC = GetComponent<Animator> ();
-        _enemyStats = GetComponent<EnemyStats> ();
-        _projectile = Rock.GetComponent<Projectile> ();
+        _enemyStats = GetComponent<EnemyStats> ();        
     }
 
     public void ResetAttack()
@@ -40,12 +41,13 @@ public class EnemyAnimationEvents : MonoBehaviour
 
     public void InstantiateRock()
     {
-        Instantiate (Rock, RockPosition);
+       _spawnedRock = Instantiate (Rock, RockPosition);
     }
 
     public void ThrowRock()
     {
-        Rock.transform.SetParent (null);
+        _projectile = _spawnedRock.GetComponent<Projectile> ();
+        _spawnedRock.transform.parent = null;
         _projectile.enabled = true;
         _projectile.IsFlying = true;
     }

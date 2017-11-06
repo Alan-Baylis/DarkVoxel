@@ -265,6 +265,22 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0
+        functionName: InstantiateRock
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 8b8707d0ad9585e45a44076ed558f7b2,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.91936976
+        functionName: ThrowRock
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 8b8707d0ad9585e45a44076ed558f7b2,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

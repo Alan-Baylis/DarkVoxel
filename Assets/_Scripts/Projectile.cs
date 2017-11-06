@@ -6,13 +6,28 @@ public class Projectile : MonoBehaviour
 {
     public bool IsFlying = false;
 
-    public float Speed = 10.0f;
+    public float Speed = 10.0f;    
+
+    private Transform _playerTransform;
+
+    [SerializeField] private bool _isPositioned = false;
+
+    private void Start ( )
+    {
+        _playerTransform = GameObject.Find("Player").transform;
+    }
 
     private void Update ( )
     {
         if(IsFlying)
         {
-            transform.Translate (transform.forward * Speed * Time.deltaTime);
+            if (!_isPositioned)
+            {
+                transform.LookAt (_playerTransform.position + _playerTransform.up);
+                _isPositioned = true;
+            }
+
+            transform.Translate (Vector3.forward * Speed * Time.deltaTime);
         }
     }
 
