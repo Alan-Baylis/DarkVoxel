@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4862950773685318}
   - component: {fileID: 65631110231176890}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Arm1_L_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4621795861660776}
   - component: {fileID: 65205634233908860}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Arm2_R_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4467226882817402}
   - component: {fileID: 65010929930547226}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Arm3_L_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -67,14 +67,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4899362497023172}
-  - component: {fileID: 54723005836926770}
   - component: {fileID: 95473038400422662}
   - component: {fileID: 195152109905889570}
+  - component: {fileID: 54982794013488692}
   - component: {fileID: 114023541289410970}
   - component: {fileID: 114941313799267612}
   - component: {fileID: 114051740810596044}
   - component: {fileID: 114199928597578080}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4662019584361968}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm2_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4944941177985922}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm1_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4574084561358216}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4019978861040750}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 65181746021513706}
   - component: {fileID: 65293620363925754}
   - component: {fileID: 65136451252738206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Head_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4640480777401070}
   - component: {fileID: 65154428886021236}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LockOnCollider
   m_TagString: LockOnCollider
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4608002320452698}
   - component: {fileID: 137551134532534570}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Baby_Myconid
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4091892351369820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4349676811229638}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hip
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4514012611364802}
   - component: {fileID: 65117096264678302}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Leg_L_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4305123432247160}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Armature
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4003548174417150}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm1_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4495176591039834}
   - component: {fileID: 65306384208614880}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Arm3_R_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4546279841546072}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm3_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4046286373425732}
   - component: {fileID: 65283840974309388}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Arm2_L_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4222941781330966}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm2_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4077227969136538}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4224857941655456}
   - component: {fileID: 65849958888565114}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Leg_R_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4275598583814240}
   - component: {fileID: 65520869669668172}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Hip_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4262114633548606}
   - component: {fileID: 65033168974734068}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Body_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4461459506479458}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4215666722197320}
   - component: {fileID: 65717425408069088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Myconid_Arm1_R_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4912294675456404}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm3_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199297084001324}
   m_LocalRotation: {x: -0, y: 0.9995916, z: -0, w: 0.028577417}
-  m_LocalPosition: {x: 73.08, y: 20.209, z: 231.62}
+  m_LocalPosition: {x: 73.08, y: 21.08, z: 231.62}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4461459506479458}
@@ -815,7 +815,7 @@ Transform:
   m_Father: {fileID: 4019978861040750}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54723005836926770
+--- !u!54 &54982794013488692
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -828,8 +828,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65010929930547226
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1039,6 +1039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8707d0ad9585e45a44076ed558f7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Rock: {fileID: 1533910852508538, guid: e3b3f8454dda9cd40b90746206d0a571, type: 2}
+  RockPosition: {fileID: 4912294675456404}
 --- !u!114 &114199928597578080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1051,8 +1053,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  AgroRange: 15
-  AttackRange: 0.6
+  RangedChaseRange: 40
+  MeleeAttackRange: 1
+  MeleeChaseRange: 5
+  FleeRange: 10
+  RangedAttackRange: 20
+  FleeRangeModifier: 10
   IsAttacking: 0
 --- !u!114 &114941313799267612
 MonoBehaviour:
@@ -1161,7 +1167,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1199297084001324}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.2
+  m_Radius: 0.3
   m_Speed: 2.5
   m_Acceleration: 15
   avoidancePriority: 50

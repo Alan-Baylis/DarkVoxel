@@ -7,10 +7,11 @@ public class BabyMyconidAI : MonoBehaviour
 {
     public Transform Player;
 
-    public float ChaseRange = 10.0f;
-    public float MeleeAttackRange = 0.5f;
-    public float FleeRange = 3.0f;
-    public float RangedAttackRange = 10.0f;
+    public float RangedChaseRange = 40.0f;
+    public float RangedAttackRange = 25.0f;
+    public float FleeRange = 15.0f;
+    public float MeleeChaseRange = 10.0f;
+    public float MeleeAttackRange = 1.0f;   
 
     [Space]
     public float FleeRangeModifier = 10.0f;
@@ -51,20 +52,31 @@ public class BabyMyconidAI : MonoBehaviour
             IsAttacking = true;
         }
 
-        if (_distanceToPlayer <= ChaseRange)
+        if (_distanceToPlayer <= RangedChaseRange)
         {
             if (_distanceToPlayer <= RangedAttackRange)
             {
                 if(_distanceToPlayer <= FleeRange)
                 {
-                    Vector3 fleePosition = transform.position + Player.forward * FleeRangeModifier;
+                    if(_distanceToPlayer <= MeleeChaseRange)
+                    {
+                        if (_playerDetected)
+                        {
+                            _agent.isStopped = false;
+                            _agent.SetDestination (Player.position);
+                        }
+                    }
+                    else
+                    {
+                        Vector3 fleePosition = transform.position + Player.forward * FleeRangeModifier;
 
-                    NavMeshHit hit;
+                        NavMeshHit hit;
 
-                    NavMesh.SamplePosition (fleePosition, out hit, FleeRangeModifier, 1 << NavMesh.GetAreaFromName("Walkable"));
+                        NavMesh.SamplePosition (fleePosition, out hit, FleeRangeModifier, 1 << NavMesh.GetAreaFromName ("Walkable"));
 
-                    _agent.isStopped = false;
-                    _agent.SetDestination (hit.position);
+                        _agent.isStopped = false;
+                        _agent.SetDestination (hit.position);
+                    }                   
                 }
                 else
                 {
@@ -119,7 +131,7 @@ public class BabyMyconidAI : MonoBehaviour
             {
                 RaycastHit hit;
 
-                if (Physics.Raycast (transform.position + transform.up, _directionToPlayer + Player.transform.up, out hit, ChaseRange))
+                if (Physics.Raycast (transform.position + transform.up, _directionToPlayer + Player.transform.up, out hit, RangedChaseRange))
                 {
                     Debug.DrawRay (transform.position + transform.up, _directionToPlayer + Player.transform.up);
 
@@ -130,7 +142,7 @@ public class BabyMyconidAI : MonoBehaviour
                     }
                 }                 
             }
-            else if(_distanceToLastDeactivator > ChaseRange && _distanceToLastDeactivator < _distanceToPlayer)
+            else if(_distanceToLastDeactivator > RangedChaseRange && _distanceToLastDeactivator < _distanceToPlayer)
             {
                 _playerDetected = false;
                 _watchOutForPlayer = false;
@@ -145,6 +157,9 @@ public class BabyMyconidAI : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere (transform.position, MeleeAttackRange);
 
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere (transform.position, MeleeChaseRange);
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere (transform.position, FleeRange);
 
@@ -152,7 +167,7 @@ public class BabyMyconidAI : MonoBehaviour
         Gizmos.DrawWireSphere (transform.position, RangedAttackRange);
 
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere (transform.position, ChaseRange);
+        Gizmos.DrawWireSphere (transform.position, RangedChaseRange);
     }
 
     private void OnTriggerEnter ( Collider other )
