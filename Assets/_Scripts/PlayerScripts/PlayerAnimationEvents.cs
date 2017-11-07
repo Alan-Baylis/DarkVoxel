@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAnimationEvents : MonoBehaviour {
 
+    public GameObject LevelUpMedalion;
+
     public bool DamageEnabled = false;
     public bool CanGetDamaged = true;
 
@@ -128,6 +130,16 @@ public class PlayerAnimationEvents : MonoBehaviour {
         }
 
         PlayerStats.instance.CanRegainStamina = false;
+    }
+
+    public void ShowMedalion()
+    {
+        LevelUpMedalion.SetActive (true);
+    }
+
+    public void HideMedalion()
+    {
+        LevelUpMedalion.SetActive (false);
     }
 
     public void Heal()
