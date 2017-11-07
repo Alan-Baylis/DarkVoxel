@@ -778,7 +778,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199297084001324}
   m_LocalRotation: {x: -0, y: 0.9995916, z: -0, w: 0.028577417}
-  m_LocalPosition: {x: 73.08, y: 21.08, z: 231.62}
+  m_LocalPosition: {x: 73.08, y: 20.206, z: 231.62}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4461459506479458}
@@ -828,7 +828,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &65010929930547226
 BoxCollider:
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8707d0ad9585e45a44076ed558f7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rock: {fileID: 1533910852508538, guid: e3b3f8454dda9cd40b90746206d0a571, type: 2}
+  Rock: {fileID: 1413061923060648, guid: 16964f69876c0c743bccfeac13c3bcee, type: 2}
   RockPosition: {fileID: 4912294675456404}
 --- !u!114 &114199928597578080
 MonoBehaviour:
@@ -1054,10 +1054,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   RangedChaseRange: 40
-  MeleeAttackRange: 1
-  MeleeChaseRange: 5
-  FleeRange: 10
   RangedAttackRange: 20
+  FleeRange: 10
+  MeleeChaseRange: 5
+  MeleeAttackRange: 1
   FleeRangeModifier: 10
   IsAttacking: 0
 --- !u!114 &114941313799267612

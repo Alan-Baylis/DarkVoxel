@@ -41,13 +41,15 @@ public class EnemyAnimationEvents : MonoBehaviour
 
     public void InstantiateRock()
     {
-       _spawnedRock = Instantiate (Rock, RockPosition);
+       _spawnedRock = Instantiate (Rock, RockPosition);        
     }
 
     public void ThrowRock()
     {
         _projectile = _spawnedRock.GetComponent<Projectile> ();
         _spawnedRock.transform.parent = null;
+        Rigidbody rb =_spawnedRock.AddComponent<Rigidbody> ();
+        rb.useGravity = false;
         _projectile.enabled = true;
         _projectile.IsFlying = true;
     }

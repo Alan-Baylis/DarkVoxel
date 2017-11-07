@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4645466670957900}
   - component: {fileID: 33222034102676532}
   - component: {fileID: 23788811691418250}
-  - component: {fileID: 95765220711478414}
   - component: {fileID: 114804156314629952}
+  - component: {fileID: 136505042708128680}
   m_Layer: 0
   m_Name: MyconidPebble
   m_TagString: Untagged
@@ -36,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413061923060648}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23788811691418250
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -82,23 +82,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413061923060648}
   m_Mesh: {fileID: 4300000, guid: f2dc4e6ee7a3b0b4e845398d629336c3, type: 3}
---- !u!95 &95765220711478414
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1413061923060648}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f2dc4e6ee7a3b0b4e845398d629336c3, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114804156314629952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,3 +95,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsFlying: 0
   Speed: 10
+  Damage: 5
+--- !u!136 &136505042708128680
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413061923060648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.033476003
+  m_Height: 0.06979601
+  m_Direction: 1
+  m_Center: {x: 0.00088500045, y: 0.0040150015, z: 0.0014975}

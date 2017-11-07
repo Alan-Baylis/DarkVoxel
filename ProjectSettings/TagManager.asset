@@ -13,6 +13,7 @@ TagManager:
   - PlayerWeapon
   - Weapon
   - Shield
+  - Projectile
   layers:
   - Default
   - TransparentFX

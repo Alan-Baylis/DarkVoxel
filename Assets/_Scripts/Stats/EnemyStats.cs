@@ -50,8 +50,8 @@ public class EnemyStats : CharacterStats
                 {
                     DamagedPlayerThisAttack = true;
 
-                    _playerStats.TakeDamageWithStamina (AttackDamage);
                     float damage = AttackDamage - _playerStats.CurrentStamina;
+                    _playerStats.TakeDamageWithStamina (AttackDamage);                    
                     _playerStats.TakeDamage ((int)damage);
                 }
             }
