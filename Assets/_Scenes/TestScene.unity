@@ -228,6 +228,51 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114194464135548830, guid: 7bef1b954d282e94697de6aad20ad971,
+        type: 2}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 1312231828}
+    - target: {fileID: 114194464135548830, guid: 7bef1b954d282e94697de6aad20ad971,
+        type: 2}
+      propertyPath: HealthBarOverTime
+      value: 
+      objectReference: {fileID: 1133672552}
+    - target: {fileID: 114194464135548830, guid: 7bef1b954d282e94697de6aad20ad971,
+        type: 2}
+      propertyPath: StaminaBar
+      value: 
+      objectReference: {fileID: 919503013}
+    - target: {fileID: 114194464135548830, guid: 7bef1b954d282e94697de6aad20ad971,
+        type: 2}
+      propertyPath: StaminaBarOverTime
+      value: 
+      objectReference: {fileID: 119702856}
+    - target: {fileID: 95883267264791154, guid: 7bef1b954d282e94697de6aad20ad971,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0184224094971ff49ac96f94c8333dde, type: 2}
+    - target: {fileID: 114393889609271896, guid: 7bef1b954d282e94697de6aad20ad971,
+        type: 2}
+      propertyPath: Menu
+      value: 
+      objectReference: {fileID: 644977462}
+    - target: {fileID: 114393889609271896, guid: 7bef1b954d282e94697de6aad20ad971,
+        type: 2}
+      propertyPath: EquipmentHUD
+      value: 
+      objectReference: {fileID: 1352384631}
+    - target: {fileID: 114393889609271896, guid: 7bef1b954d282e94697de6aad20ad971,
+        type: 2}
+      propertyPath: MainCameraRig
+      value: 
+      objectReference: {fileID: 601283859}
+    - target: {fileID: 114393889609271896, guid: 7bef1b954d282e94697de6aad20ad971,
+        type: 2}
+      propertyPath: MainCameraRigPivot
+      value: 
+      objectReference: {fileID: 2082888219}
     - target: {fileID: 114215564082740428, guid: 7bef1b954d282e94697de6aad20ad971,
         type: 2}
       propertyPath: HeadSlotImage
@@ -278,100 +323,6 @@ Prefab:
       propertyPath: HUDUsableItem
       value: 
       objectReference: {fileID: 1428280098}
-    - target: {fileID: 114393889609271896, guid: 7bef1b954d282e94697de6aad20ad971,
-        type: 2}
-      propertyPath: Menu
-      value: 
-      objectReference: {fileID: 644977462}
-    - target: {fileID: 114393889609271896, guid: 7bef1b954d282e94697de6aad20ad971,
-        type: 2}
-      propertyPath: EquipmentHUD
-      value: 
-      objectReference: {fileID: 1352384631}
-    - target: {fileID: 114393889609271896, guid: 7bef1b954d282e94697de6aad20ad971,
-        type: 2}
-      propertyPath: MainCameraRig
-      value: 
-      objectReference: {fileID: 601283859}
-    - target: {fileID: 95883267264791154, guid: 7bef1b954d282e94697de6aad20ad971,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 0184224094971ff49ac96f94c8333dde, type: 2}
-    - target: {fileID: 114194464135548830, guid: 7bef1b954d282e94697de6aad20ad971,
-        type: 2}
-      propertyPath: HealthBar
-      value: 
-      objectReference: {fileID: 1312231828}
-    - target: {fileID: 114194464135548830, guid: 7bef1b954d282e94697de6aad20ad971,
-        type: 2}
-      propertyPath: HealthBarOverTime
-      value: 
-      objectReference: {fileID: 1133672552}
-    - target: {fileID: 114194464135548830, guid: 7bef1b954d282e94697de6aad20ad971,
-        type: 2}
-      propertyPath: StaminaBar
-      value: 
-      objectReference: {fileID: 919503013}
-    - target: {fileID: 114194464135548830, guid: 7bef1b954d282e94697de6aad20ad971,
-        type: 2}
-      propertyPath: StaminaBarOverTime
-      value: 
-      objectReference: {fileID: 119702856}
-    - target: {fileID: 143374738112393390, guid: 7bef1b954d282e94697de6aad20ad971,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936249989272150, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.367
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936249989272150, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.97982526
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936249989272150, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.0490045
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936249989272150, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -0.19351344
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936249989272150, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.851
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936249989272150, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.986
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936249989272150, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 202.344
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936249989272150, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.009678286
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936249989272150, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 5.7260003
-      objectReference: {fileID: 0}
-    - target: {fileID: 114393889609271896, guid: 7bef1b954d282e94697de6aad20ad971,
-        type: 2}
-      propertyPath: MainCameraRigPivot
-      value: 
-      objectReference: {fileID: 2082888219}
-    - target: {fileID: 4437459508744518, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4437459508744518, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -425.673
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
   m_IsPrefabParent: 0

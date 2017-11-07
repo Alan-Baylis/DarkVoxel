@@ -1308,8 +1308,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162645868410544}
-  m_LocalRotation: {x: -0.0025605704, y: 0.7071022, z: 0.0025605718, w: 0.7071022}
-  m_LocalPosition: {x: 238.101, y: 4.367, z: 282.11}
+  m_LocalRotation: {x: -0, y: 0.5422404, z: -0, w: -0.84022343}
+  m_LocalPosition: {x: 36.736, y: 30.61, z: 235.881}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4676610541610380}
@@ -1318,7 +1318,7 @@ Transform:
   - {fileID: 4936249989272150}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0.41500002, y: 90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -425.673, z: 0}
 --- !u!4 &4440677789136188
 Transform:
   m_ObjectHideFlags: 1
@@ -1810,13 +1810,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1924765272038678}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.24, y: 1, z: 2.5}
+  m_LocalRotation: {x: -0.009678286, y: 0.97982526, z: -0.0490045, w: -0.19351344}
+  m_LocalPosition: {x: -1.851, y: 0.986, z: 0.367}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4437459508744518}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.7260003, y: 202.344, z: 0}
 --- !u!4 &4941957153039940
 Transform:
   m_ObjectHideFlags: 1
@@ -2159,6 +2159,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   MaxStamina: 100
+  HealthRecovered: 50
+  MaxNumberOfRecoveries: 10
+  CurrentNumberOfRecoveries: 10
   CurrentHealth: 100
   CurrentStamina: 100
   Damage:
@@ -2195,6 +2198,7 @@ MonoBehaviour:
   StaminaBar: {fileID: 0}
   StaminaBarOverTime: {fileID: 0}
   DecrementOverTime: 0.3
+  IncrementOverTime: 0.3
 --- !u!114 &114215564082740428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2262,6 +2266,7 @@ MonoBehaviour:
   Menu: {fileID: 0}
   EquipmentHUD: {fileID: 0}
   MainCameraRig: {fileID: 0}
+  MainCameraRigPivot: {fileID: 0}
   _runTimer: 0.75
 --- !u!114 &114599970999104354
 MonoBehaviour:
@@ -2286,6 +2291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageEnabled: 0
+  CanGetDamaged: 1
   EnemiesHitThisAttack: []
 --- !u!114 &114737379834400992
 MonoBehaviour:
@@ -2401,7 +2407,7 @@ CharacterController:
   m_GameObject: {fileID: 1162645868410544}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.86
   m_Radius: 0.2

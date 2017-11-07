@@ -6,6 +6,10 @@ public class CharacterStats : MonoBehaviour
     public int MaxHealth = 100;
     public int MaxStamina = 100;
 
+    public int HealthRecovered = 50;
+    public int MaxNumberOfRecoveries = 10;
+    public int CurrentNumberOfRecoveries = 10;
+
     [Space(10)]
     public float CurrentHealth;
     public float CurrentStamina;   
@@ -53,7 +57,7 @@ public class CharacterStats : MonoBehaviour
     public void Heal(int amount)
     {
         CurrentHealth += amount;
-        CurrentHealth = Mathf.Clamp (amount, 0, MaxHealth);
+        CurrentHealth = Mathf.Clamp (CurrentHealth, 0, MaxHealth);
     }
 
     public void TakeDamageWithStamina(float amount)

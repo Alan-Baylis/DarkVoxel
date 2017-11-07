@@ -66,6 +66,7 @@ public class PlayerInputManager : MonoBehaviour
         LockOn ();
         Roll ();
         Run ();
+        Heal (_playerStats.HealthRecovered);
 
         if (_gameManager.StateOfGame == GameManager.GameState.Playing)
         {
@@ -491,6 +492,14 @@ public class PlayerInputManager : MonoBehaviour
                 Menu.GetComponentInChildren<Button> ().Select ();
                 _gameManager.StateOfGame = GameManager.GameState.InMenu;
             }
+        }
+    }
+
+    private void Heal(int amount)
+    {
+        if(Input.GetButtonDown("Heal") && _playerStats.CurrentNumberOfRecoveries > 0)
+        {
+            _playerAC.SetTrigger ("Heal");
         }
     }
 

@@ -23,7 +23,8 @@ public class PlayerStats : CharacterStats
     public Image StaminaBar;
     public Image StaminaBarOverTime;
 
-    public float DecrementOverTime;                                                 //Used to control speed of health over time depletion
+    public float DecrementOverTime;                                             //Used to control speed of health over time depletion
+    public float IncrementOverTime;                                             //Used to control speed of health over time regeneration
 
     private EquipmentManager _equipmentManager;
 
@@ -124,13 +125,21 @@ public class PlayerStats : CharacterStats
 
     public void UpdateUI ( )
     {
-        HealthBar.fillAmount = CurrentHealth / MaxHealth;        
+        if (HealthBar.fillAmount > CurrentHealth / MaxHealth)
+        {
+            HealthBar.fillAmount = CurrentHealth / MaxHealth;
+        }
+        else if(HealthBar.fillAmount < CurrentHealth / MaxHealth)
+        {
+            HealthBarOverTime.fillAmount = CurrentHealth / MaxHealth;
+        }
+
         StaminaBar.fillAmount = CurrentStamina / MaxStamina;
 
         if(HealthBar.fillAmount > HealthBarOverTime.fillAmount)
         {
             HealthBarOverTime.fillAmount = HealthBar.fillAmount;
-        }
+        }        
 
         if(StaminaBar.fillAmount > StaminaBarOverTime.fillAmount)
         {
@@ -138,15 +147,24 @@ public class PlayerStats : CharacterStats
         }
 
         StartCoroutine (UpdateUIOverTime ());
-    }
+    } 
 
     private IEnumerator UpdateUIOverTime()
     {
-        while(HealthBarOverTime.fillAmount != CurrentHealth / MaxHealth)
+        while(HealthBarOverTime.fillAmount > CurrentHealth / MaxHealth)
         {
             if(HealthBar.fillAmount < HealthBarOverTime.fillAmount)
             {
                 HealthBarOverTime.fillAmount -= DecrementOverTime * Time.deltaTime;
+            }
+            break;
+        }
+
+        while (HealthBar.fillAmount < CurrentHealth / MaxHealth)
+        {
+            if(HealthBar.fillAmount < HealthBarOverTime.fillAmount)
+            {
+                HealthBar.fillAmount += IncrementOverTime * Time.deltaTime;
             }
             break;
         }

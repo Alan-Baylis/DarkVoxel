@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAnimationEvents : MonoBehaviour {
 
     public bool DamageEnabled = false;
+    public bool CanGetDamaged = true;
 
     public List<EnemyStats> EnemiesHitThisAttack = new List<EnemyStats>();
 
@@ -36,11 +37,13 @@ public class PlayerAnimationEvents : MonoBehaviour {
     public void StartRolling( )
     {
         _playerAC.SetBool ("RollFinished", false);       //disables rolling in the middle of roll animation
+        CanGetDamaged = false;
     }
     
     public void StopRolling( )
     {
         _playerAC.SetBool ("RollFinished", true);
+        CanGetDamaged = true;
     }
 
     public void ResetRollAttack()
@@ -125,5 +128,10 @@ public class PlayerAnimationEvents : MonoBehaviour {
         }
 
         PlayerStats.instance.CanRegainStamina = false;
+    }
+
+    public void Heal()
+    {
+        _playerStats.Heal (_playerStats.HealthRecovered);
     }
 }
