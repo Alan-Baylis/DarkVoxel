@@ -19,6 +19,10 @@ public class Interact : MonoBehaviour
                 }                
                 InteractionObject.GetComponent<Chest> ().Interact ();
                 break;
+
+            case ObjectSorter.ObjectType.Checkpoint:
+
+                break;
         }
     }
 

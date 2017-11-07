@@ -11,7 +11,10 @@ public class PlayerInputManager : MonoBehaviour
 
     public static Vector3 MoveDirection;
 
-    public GameObject Menu;    
+    public GameObject Menu;
+    public GameObject EquipmentHUD;
+    public GameObject MainCameraRig;
+    public GameObject MainCameraRigPivot;
 
     private PlayerManager _playerManager;
     private LockOnCamera _lockOnCamera;
@@ -27,7 +30,9 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] private float _runTimer = 0.75f;                       //time in sec that dictates how long the player needs to hold run button before running, or how fast must he release the button fo rolling
     private float _currentTimer;
 
-    private GameObject _lockedOnEnemy;   
+    private GameObject _lockedOnEnemy;    
+
+    private Transform _inventoryCameraPosition;
 
     private bool _targetChanged = false;
     private bool _isResting = false;                                        //Disables running emidiately after stamina is regained if the run button is stil pressed down                                                 
@@ -51,7 +56,8 @@ public class PlayerInputManager : MonoBehaviour
         _playerAC = GetComponent<Animator> ();
         _gameManager = GameManager.instance;
         _playerStats = PlayerStats.instance;
-        _currentTimer = _runTimer;       
+        _currentTimer = _runTimer;
+        _inventoryCameraPosition = transform.Find ("InventoryCameraPosition");
     }
 
     private void Update ( )
@@ -471,16 +477,35 @@ public class PlayerInputManager : MonoBehaviour
         {
             if (Menu.activeSelf)
             {
-                Menu.SetActive (false);                
+                Menu.SetActive (false);
+                EquipmentHUD.SetActive (true);
+                _characterControllerCamera.enabled = true;
                 _gameManager.StateOfGame = GameManager.GameState.Playing;
             }
             else
             {
                 Menu.SetActive (true);
+                EquipmentHUD.SetActive (false);
+                _characterControllerCamera.enabled = false;
+                StartCoroutine (SetInventoryCameraPosition ());
                 Menu.GetComponentInChildren<Button> ().Select ();
                 _gameManager.StateOfGame = GameManager.GameState.InMenu;
             }
         }
+    }
+
+    IEnumerator SetInventoryCameraPosition()
+    {
+        while (Vector3.Distance (MainCameraRig.transform.position, _inventoryCameraPosition.position) > 0.05f)
+        {
+            MainCameraRig.transform.position = Vector3.Lerp (MainCameraRig.transform.position, _inventoryCameraPosition.position, 0.1f);
+            MainCameraRigPivot.transform.rotation = Quaternion.Lerp (MainCameraRigPivot.transform.rotation, _inventoryCameraPosition.rotation, 0.1f);
+
+            yield return null;
+        }
+
+
+        yield return 0;
     }
 
     IEnumerator Countdown ( )

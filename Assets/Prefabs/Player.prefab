@@ -868,6 +868,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1924765272038678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4936249989272150}
+  m_Layer: 8
+  m_Name: InventoryCameraPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1937363048997338
 GameObject:
   m_ObjectHideFlags: 1
@@ -1293,16 +1308,17 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162645868410544}
-  m_LocalRotation: {x: -0, y: -0.4891652, z: -0, w: -0.87219113}
-  m_LocalPosition: {x: 33, y: 30.88, z: 239.04}
+  m_LocalRotation: {x: -0.0025605704, y: 0.7071022, z: 0.0025605718, w: 0.7071022}
+  m_LocalPosition: {x: 238.101, y: 4.367, z: 282.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4676610541610380}
   - {fileID: 4027101800032268}
   - {fileID: 4196253344870294}
+  - {fileID: 4936249989272150}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -301.429, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.41500002, y: 90.00001, z: 0}
 --- !u!4 &4440677789136188
 Transform:
   m_ObjectHideFlags: 1
@@ -1788,6 +1804,19 @@ Transform:
   m_Father: {fileID: 4206928229978990}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4936249989272150
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1924765272038678}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -1.24, y: 1, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4437459508744518}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4941957153039940
 Transform:
   m_ObjectHideFlags: 1
@@ -2153,14 +2182,14 @@ MonoBehaviour:
   Charisma:
     _baseValue: 0
   CanRegainStamina: 1
-  CharacterAC: {fileID: 0}
+  CharacterAC: {fileID: 95139461945979484}
   Agent: {fileID: 0}
   RB: {fileID: 0}
   RunStaminaUsage: 5
   RollStaminaUsage: 15
   AttackStaminaUsage: 15
   HeavyAttackStaminaUsage: 30
-  StaminaGain: 15
+  StaminaGain: 20
   HealthBar: {fileID: 0}
   HealthBarOverTime: {fileID: 0}
   StaminaBar: {fileID: 0}
@@ -2231,6 +2260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 0}
+  EquipmentHUD: {fileID: 0}
+  MainCameraRig: {fileID: 0}
   _runTimer: 0.75
 --- !u!114 &114599970999104354
 MonoBehaviour:
@@ -2370,7 +2401,7 @@ CharacterController:
   m_GameObject: {fileID: 1162645868410544}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Height: 1.86
   m_Radius: 0.2
