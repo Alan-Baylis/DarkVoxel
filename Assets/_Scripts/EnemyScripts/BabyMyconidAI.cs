@@ -47,57 +47,7 @@ public class BabyMyconidAI : MonoBehaviour
     {        
         _distanceToPlayer = Vector3.Distance (transform.position, Player.position);
         _directionToPlayer = (Player.transform.position - (transform.position + transform.up));
-
-        if(_distanceToPlayer <= MeleeAttackRange && !IsAttacking)
-        {            
-            _myconidAC.SetTrigger ("Attack");
-            IsAttacking = true;
-        }
-
-        if (_distanceToPlayer <= MeleeChaseRange)
-        {            
-            _agent.SetDestination (Player.position);
-            destination = _agent.destination;
-        }
-
-        if (_distanceToPlayer > MeleeChaseRange && _distanceToPlayer <= FleeRange)
-        {
-            Vector3 fleePosition = transform.position + Player.forward * FleeRangeModifier;
-
-            NavMeshHit hit;
-
-            NavMesh.SamplePosition (fleePosition, out hit, FleeRangeModifier, 1 << NavMesh.GetAreaFromName ("Walkable"));
-
-            _agent.SetDestination (hit.position);            
-            destination = _agent.destination;
-        }
-        //else if (_distanceToPlayer > FleeRange && _distanceToPlayer <= RangedAttackRange)
-        //{
-        //    Debug.Log ("Shoot");
-
-        //    _playerDetected = true;
-
-        //    transform.LookAt (Player);
-
-        //    if (!IsAttacking)
-        //    {                
-        //        _myconidAC.SetTrigger ("RangedAttack");
-        //        IsAttacking = true;
-        //    }
-        //}
-        //else if (_distanceToPlayer > RangedAttackRange && _distanceToPlayer <= RangedChaseRange)
-        //{
-        //    if (_playerDetected)
-        //    {
-        //        _agent.SetDestination (Player.position);
-        //        destination = _agent.destination;        
-        //    }           
-        //}
-        else if(_distanceToPlayer > RangedChaseRange)
-        {
-            _playerDetected = false;
-        }
-
+                
         if(_agent.velocity.magnitude > 0.0f)
         {
             _myconidAC.SetBool ("IsMoving", true);
