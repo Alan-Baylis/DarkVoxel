@@ -737,7 +737,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291968016746380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.305, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4899362497023172}
@@ -778,7 +778,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199297084001324}
   m_LocalRotation: {x: -0, y: 0.9995916, z: -0, w: 0.028577417}
-  m_LocalPosition: {x: 73.08, y: 20.206, z: 231.62}
+  m_LocalPosition: {x: 73.08, y: 22.11, z: 231.62}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4461459506479458}
@@ -829,7 +829,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &65010929930547226
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1057,7 +1057,7 @@ MonoBehaviour:
   RangedAttackRange: 20
   FleeRange: 10
   MeleeChaseRange: 5
-  MeleeAttackRange: 1
+  MeleeAttackRange: 1.25
   FleeRangeModifier: 10
   IsAttacking: 0
 --- !u!114 &114941313799267612
@@ -1073,6 +1073,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   MaxStamina: 100
+  HealthRecovered: 50
+  MaxNumberOfRecoveries: 10
+  CurrentNumberOfRecoveries: 10
   CurrentHealth: 12
   CurrentStamina: 50
   Damage:
@@ -1175,8 +1178,8 @@ NavMeshAgent:
   m_StoppingDistance: 0.6
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
-  m_AutoRepath: 0
+  m_AutoRepath: 1
   m_Height: 0.72
-  m_BaseOffset: -0.053
+  m_BaseOffset: -0.04
   m_WalkableMask: 1
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 3
