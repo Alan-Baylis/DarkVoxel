@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 2
+  m_AmbientIntensity: 1.35
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: fb3b9b55c01d2194c816b2d469854e16, type: 2}
@@ -1549,15 +1549,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4650449196287048, guid: 05dece3493d072f4bbfdafb4581ef551, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 163.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4650449196287048, guid: 05dece3493d072f4bbfdafb4581ef551, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.4
+      value: 1.37
       objectReference: {fileID: 0}
     - target: {fileID: 4650449196287048, guid: 05dece3493d072f4bbfdafb4581ef551, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 175.4
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4650449196287048, guid: 05dece3493d072f4bbfdafb4581ef551, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1565,7 +1565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4650449196287048, guid: 05dece3493d072f4bbfdafb4581ef551, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4650449196287048, guid: 05dece3493d072f4bbfdafb4581ef551, type: 2}
       propertyPath: m_LocalRotation.z
@@ -1573,7 +1573,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4650449196287048, guid: 05dece3493d072f4bbfdafb4581ef551, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4650449196287048, guid: 05dece3493d072f4bbfdafb4581ef551, type: 2}
       propertyPath: m_RootOrder
@@ -1604,7 +1604,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4650449196287048, guid: 05dece3493d072f4bbfdafb4581ef551, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20479342393665940, guid: 05dece3493d072f4bbfdafb4581ef551,
         type: 2}
@@ -2073,7 +2073,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1.7
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -3823,7 +3823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: d6a60de418dfc654a9e07b32b10afa02, type: 2}
+  profile: {fileID: 0}
 --- !u!1 &1253444435
 GameObject:
   m_ObjectHideFlags: 0
