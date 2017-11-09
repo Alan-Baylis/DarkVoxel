@@ -31,9 +31,7 @@ public class BabyMyconidAI : MonoBehaviour
     private Collider _lastDeactivator;
 
     private NavMeshAgent _agent;
-    private Animator _myconidAC;
-
-    public Vector3 destination;
+    private Animator _myconidAC;  
 
     private void Start ( )
     {
@@ -53,8 +51,50 @@ public class BabyMyconidAI : MonoBehaviour
             _myconidAC.SetTrigger ("Attack");
             IsAttacking = true;
         }
+
+        if(_distanceToPlayer <= MeleeChaseRange)
+        {
+            _agent.isStopped = false;
+            if (!IsAttacking)
+            {
+                _agent.SetDestination (Player.position);
+            }
+        }
+        else if(_distanceToPlayer > MeleeChaseRange && _distanceToPlayer <= FleeRange)
+        {
+            Vector3 fleePosition = transform.position + Player.forward * FleeRangeModifier;
+
+            NavMeshHit hit;
+
+            NavMesh.SamplePosition (fleePosition, out hit, FleeRangeModifier, 1 << NavMesh.GetAreaFromName ("Walkable"));
+            
+            if (!IsAttacking)
+            {
+                _agent.isStopped = false;
+                _agent.SetDestination (hit.position);
+            }
+        }
+        else if(_distanceToPlayer > FleeRange && _distanceToPlayer <= RangedAttackRange)
+        {
+            _agent.isStopped = true;
+            if (!IsAttacking)
+            {
+                _myconidAC.SetTrigger ("RangedAttack");
+                IsAttacking = true;
+            }
+            _playerDetected = true;
+        }
+        else if(_distanceToPlayer > RangedAttackRange && _distanceToPlayer <= RangedChaseRange)
+        {
+            if(_playerDetected)
+            {
+                _agent.isStopped = false;
+                _agent.SetDestination (Player.position);
+            }
+
+        }
        
-        else if(_distanceToPlayer > RangedChaseRange)
+        if(_distanceToPlayer > RangedChaseRange)
         {
             _playerDetected = false;
         }

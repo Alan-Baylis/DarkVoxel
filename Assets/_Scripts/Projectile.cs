@@ -44,11 +44,11 @@ public class Projectile : MonoBehaviour
     private void Destroy ( )
     {
         Destroy (gameObject);
-    }
+    }   
 
-    private void OnCollisionEnter ( Collision collision )
+    private void OnTriggerEnter ( Collider other )
     {
-        if (collision.gameObject.CompareTag ("Player"))
+        if (other.gameObject.CompareTag ("Player"))
         {
             if (_playerAnimationEvents.CanGetDamaged && !_damagedPlayer)
             {
@@ -57,7 +57,7 @@ public class Projectile : MonoBehaviour
             }
             Destroy (gameObject);            
         }
-        else if (collision.gameObject.CompareTag ("Shield"))
+        else if (other.gameObject.CompareTag ("Shield"))
         {
             if (_playerAC.GetBool ("IsBlocking") && _playerAC.GetBool ("ShieldEquipped") && !_damagedPlayer)
             {
