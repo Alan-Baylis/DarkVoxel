@@ -48,7 +48,7 @@ public class EnemyAnimationEvents : MonoBehaviour
     {
         _projectile = _spawnedRock.GetComponent<Projectile> ();
         _spawnedRock.transform.parent = null;
-        Rigidbody rb =_spawnedRock.AddComponent<Rigidbody> ();
+        Rigidbody rb = _spawnedRock.AddComponent<Rigidbody> ();
         rb.useGravity = false;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         _projectile.enabled = true;
