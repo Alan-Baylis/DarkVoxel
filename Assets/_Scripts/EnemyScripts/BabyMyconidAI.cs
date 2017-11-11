@@ -52,15 +52,6 @@ public class BabyMyconidAI : MonoBehaviour
             IsAttacking = true;
         }
 
-<<<<<<< HEAD
-        if (_distanceToPlayer <= MeleeChaseRange)
-        {            
-            _agent.SetDestination (Player.position);
-            destination = _agent.destination;
-        }
-
-        if (_distanceToPlayer > MeleeChaseRange && _distanceToPlayer <= FleeRange)
-=======
         if(_distanceToPlayer <= MeleeChaseRange)
         {
             _agent.isStopped = false;
@@ -70,42 +61,12 @@ public class BabyMyconidAI : MonoBehaviour
             }
         }
         else if(_distanceToPlayer > MeleeChaseRange && _distanceToPlayer <= FleeRange)
->>>>>>> 164f1b4fe954e697afb68e15b75ec1ec73149ad5
         {
             Vector3 fleePosition = transform.position + Player.forward * FleeRangeModifier;
 
             NavMeshHit hit;
 
             NavMesh.SamplePosition (fleePosition, out hit, FleeRangeModifier, 1 << NavMesh.GetAreaFromName ("Walkable"));
-<<<<<<< HEAD
-
-            _agent.SetDestination (hit.position);            
-            destination = _agent.destination;
-        }
-        //else if (_distanceToPlayer > FleeRange && _distanceToPlayer <= RangedAttackRange)
-        //{
-        //    Debug.Log ("Shoot");
-
-        //    _playerDetected = true;
-
-        //    transform.LookAt (Player);
-
-        //    if (!IsAttacking)
-        //    {                
-        //        _myconidAC.SetTrigger ("RangedAttack");
-        //        IsAttacking = true;
-        //    }
-        //}
-        //else if (_distanceToPlayer > RangedAttackRange && _distanceToPlayer <= RangedChaseRange)
-        //{
-        //    if (_playerDetected)
-        //    {
-        //        _agent.SetDestination (Player.position);
-        //        destination = _agent.destination;        
-        //    }           
-        //}
-        else if(_distanceToPlayer > RangedChaseRange)
-=======
             
             if (!IsAttacking)
             {
@@ -134,7 +95,6 @@ public class BabyMyconidAI : MonoBehaviour
         }
        
         if(_distanceToPlayer > RangedChaseRange)
->>>>>>> 164f1b4fe954e697afb68e15b75ec1ec73149ad5
         {
             _playerDetected = false;
         }
