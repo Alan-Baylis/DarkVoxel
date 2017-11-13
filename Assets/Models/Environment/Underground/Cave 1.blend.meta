@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: 28d1cc5f4fa53b945b15b2594d1ae83f
-timeCreated: 1510181892
+guid: 5adc96266705cd74cb6f132dadc49c69
+timeCreated: 1510600282
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: eNTRANCE_CAVE
+    100004: Plane
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Plane
+    400002: eNTRANCE_CAVE
+    400004: Plane
+    2300000: eNTRANCE_CAVE
+    2300002: Plane
+    3300000: eNTRANCE_CAVE
+    3300002: Plane
+    4300000: eNTRANCE_CAVE
+    4300002: Plane
     7400000: Default Take
     9500000: //RootNode
   materials:
