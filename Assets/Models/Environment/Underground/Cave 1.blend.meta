@@ -13,8 +13,10 @@ ModelImporter:
     400004: Plane
     2300000: eNTRANCE_CAVE
     2300002: Plane
+    2300004: //RootNode
     3300000: eNTRANCE_CAVE
     3300002: Plane
+    3300004: //RootNode
     4300000: eNTRANCE_CAVE
     4300002: Plane
     7400000: Default Take
