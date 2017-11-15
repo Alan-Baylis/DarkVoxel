@@ -46,18 +46,30 @@ public class BabyMyconidAI : MonoBehaviour
         _distanceToPlayer = Vector3.Distance (transform.position, Player.position);
         _directionToPlayer = (Player.transform.position - (transform.position + transform.up));
 
-        if(_distanceToPlayer <= MeleeAttackRange && !IsAttacking)
-        {            
-            _myconidAC.SetTrigger ("Attack");
-            IsAttacking = true;
+        if(_distanceToPlayer <= MeleeAttackRange)
+        {
+            _directionToPlayer.y = 0.0f;
+
+            transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.LookRotation (_directionToPlayer), _agent.angularSpeed);
+
+            if (!IsAttacking)
+            {
+                _myconidAC.SetTrigger ("Attack");
+                IsAttacking = true;
+            }
         }
 
         if(_distanceToPlayer <= MeleeChaseRange)
         {
-            _agent.isStopped = false;
+            _agent.isStopped = false;           
+
             if (!IsAttacking)
             {
                 _agent.SetDestination (Player.position);
+
+                _directionToPlayer.y = 0.0f;
+
+                transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.LookRotation (_directionToPlayer), _agent.angularSpeed);
             }
         }
         else if(_distanceToPlayer > MeleeChaseRange && _distanceToPlayer <= FleeRange)
@@ -77,6 +89,11 @@ public class BabyMyconidAI : MonoBehaviour
         else if(_distanceToPlayer > FleeRange && _distanceToPlayer <= RangedAttackRange)
         {
             _agent.isStopped = true;
+
+            _directionToPlayer.y = 0.0f;
+
+            transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.LookRotation (_directionToPlayer), _agent.angularSpeed);
+
             if (!IsAttacking)
             {
                 _myconidAC.SetTrigger ("RangedAttack");
@@ -91,7 +108,6 @@ public class BabyMyconidAI : MonoBehaviour
                 _agent.isStopped = false;
                 _agent.SetDestination (Player.position);
             }
-
         }
        
         if(_distanceToPlayer > RangedChaseRange)

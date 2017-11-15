@@ -91,30 +91,14 @@ public class CharacterStats : MonoBehaviour
         {
             CharacterAC.SetTrigger ("Die");
             CharacterAC.SetBool ("Dead", true);
-        }
-
-        Collider [] colliders = GetComponentsInChildren<Collider> ();
-        MonoBehaviour [] scripts = GetComponents<MonoBehaviour> ();
-
-        foreach (Collider collider in colliders)
-        {
-            //collider.enabled = false;
-        }
-
-        if(Agent != null)
-        {
-            Agent.enabled = false;
-        }
+        }        
+        MonoBehaviour [] scripts = GetComponents<MonoBehaviour> ();         
 
         foreach (MonoBehaviour script in scripts)
         {
             script.enabled = false;
-        } 
-        
-        if(RB != null)
-        {
-            //RB.useGravity = false;
-            //RB.isKinematic = true;
         }
+
+        Agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
     }     
 }

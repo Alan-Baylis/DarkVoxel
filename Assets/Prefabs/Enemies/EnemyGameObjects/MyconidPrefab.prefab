@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  RangedChaseRange: 4039.24
+  RangedChaseRange: 30
   RangedAttackRange: 20
   FleeRange: 15
   MeleeChaseRange: 10
