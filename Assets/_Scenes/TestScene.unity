@@ -613,6 +613,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4975548201391030, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
       value: 102.910095
       objectReference: {fileID: 0}
     - target: {fileID: 4975548201391030, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
@@ -622,6 +623,17 @@ Prefab:
     - target: {fileID: 4975548201391030, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
       propertyPath: m_LocalPosition.z
       value: 163.45464
+=======
+      value: 31.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975548201391030, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 30.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975548201391030, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 237.79
+>>>>>>> parent of 60178cc... Teren i spilja
       objectReference: {fileID: 0}
     - target: {fileID: 4975548201391030, guid: 7bef1b954d282e94697de6aad20ad971, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3481,7 +3493,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4650449196287048, guid: 05dece3493d072f4bbfdafb4581ef551, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114576210059647830, guid: 05dece3493d072f4bbfdafb4581ef551,
         type: 2}
@@ -4204,6 +4216,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &300209244
 GameObject:
   m_ObjectHideFlags: 0
@@ -4445,11 +4458,14 @@ NavMeshObstacle:
   m_TimeToStationary: 0.5
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!4 &306828699 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4132121503028676, guid: 22e4cc8a19246af4e89a192d9bd6d32b,
     type: 2}
   m_PrefabInternal: {fileID: 1746053463}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
@@ -4457,6 +4473,8 @@ Transform:
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1001 &306876327
 Prefab:
   m_ObjectHideFlags: 0
@@ -4542,7 +4560,10 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
   m_PrefabInternal: {fileID: 1185057345}
+<<<<<<< HEAD
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1 &350514148 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1945971614329842, guid: 22e4cc8a19246af4e89a192d9bd6d32b,
@@ -4550,6 +4571,38 @@ GameObject:
   m_PrefabInternal: {fileID: 375699226}
 --- !u!54 &350514149
 Rigidbody:
+<<<<<<< HEAD
+=======
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 350514148}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &350514150
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 350514148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: ca98b6f171c799346b6a92575c3b3949, type: 3}
+--- !u!1001 &357337240
+Prefab:
+>>>>>>> parent of 60178cc... Teren i spilja
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -7595,7 +7648,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4901227266080210, guid: b0e51cc0438f1a74b9a5443885150198, type: 2}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 15
+=======
+      value: 14
+>>>>>>> parent of 60178cc... Teren i spilja
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0e51cc0438f1a74b9a5443885150198, type: 2}
@@ -8036,6 +8093,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &840294126
 GameObject:
 =======
@@ -8127,6 +8185,8 @@ BoxCollider:
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1001 &845595930
 Prefab:
   m_ObjectHideFlags: 0
@@ -9653,8 +9713,11 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1 &1012527587 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1945971614329842, guid: 22e4cc8a19246af4e89a192d9bd6d32b,
@@ -9689,6 +9752,7 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ca98b6f171c799346b6a92575c3b3949, type: 3}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &1017615423
 GameObject:
@@ -9728,6 +9792,8 @@ Transform:
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1 &1018780928
 GameObject:
   m_ObjectHideFlags: 0
@@ -11155,6 +11221,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
@@ -11162,6 +11229,9 @@ Prefab:
 =======
       value: 5
 >>>>>>> parent of c3a711d... Some Changes
+=======
+      value: 5
+>>>>>>> parent of 60178cc... Teren i spilja
       objectReference: {fileID: 0}
     - target: {fileID: 224434053349429886, guid: 529a836a449d58244b49a0d23ed232d0,
         type: 2}
@@ -12033,6 +12103,7 @@ Prefab:
       value: 31
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 1906668361002260, guid: be1f41187313f1c43acb1af57a965ef0, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -12043,6 +12114,8 @@ Prefab:
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be1f41187313f1c43acb1af57a965ef0, type: 2}
   m_IsPrefabParent: 0
@@ -12917,12 +12990,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4132121503028676, guid: 22e4cc8a19246af4e89a192d9bd6d32b, type: 2}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
       propertyPath: m_LocalEulerAnglesHint.z
       value: -76.365005
       objectReference: {fileID: 0}
@@ -12937,6 +13013,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22e4cc8a19246af4e89a192d9bd6d32b, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -13128,6 +13205,8 @@ MonoBehaviour:
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1 &1463994773 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1052349310432522, guid: 529a836a449d58244b49a0d23ed232d0,
@@ -14526,6 +14605,7 @@ GameObject:
   m_PrefabInternal: {fileID: 977755062}
 --- !u!54 &1625618589
 Rigidbody:
+<<<<<<< HEAD
 >>>>>>> parent of c3a711d... Some Changes
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -14580,8 +14660,31 @@ TerrainCollider:
 <<<<<<< HEAD
   m_Enabled: 1
 =======
+=======
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1625618588}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1625618590
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1625618588}
+>>>>>>> parent of 60178cc... Teren i spilja
   m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
+<<<<<<< HEAD
   m_TerrainData: {fileID: 15600000, guid: 8e3da78f33be6ea4288d512df04846e1, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1609851017
@@ -14638,12 +14741,17 @@ MeshCollider:
 =======
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
   serializedVersion: 2
   m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ca98b6f171c799346b6a92575c3b3949, type: 3}
+<<<<<<< HEAD
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1001 &1626491725
 Prefab:
   m_ObjectHideFlags: 0
@@ -14911,6 +15019,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1639311899
 GameObject:
   m_ObjectHideFlags: 0
@@ -14997,6 +15106,8 @@ Prefab:
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1001 &1647230266
 Prefab:
   m_ObjectHideFlags: 0
@@ -16026,12 +16137,21 @@ Prefab:
     - target: {fileID: 4132121503028676, guid: 22e4cc8a19246af4e89a192d9bd6d32b, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 14.170001
+<<<<<<< HEAD
       objectReference: {fileID: 0}
     - target: {fileID: 4132121503028676, guid: 22e4cc8a19246af4e89a192d9bd6d32b, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 35.256
       objectReference: {fileID: 0}
     - target: {fileID: 4132121503028676, guid: 22e4cc8a19246af4e89a192d9bd6d32b, type: 2}
+=======
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132121503028676, guid: 22e4cc8a19246af4e89a192d9bd6d32b, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 35.256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132121503028676, guid: 22e4cc8a19246af4e89a192d9bd6d32b, type: 2}
+>>>>>>> parent of 60178cc... Teren i spilja
       propertyPath: m_LocalEulerAnglesHint.z
       value: 15.262001
       objectReference: {fileID: 0}
@@ -16403,6 +16523,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1788742324
 GameObject:
   m_ObjectHideFlags: 0
@@ -16436,11 +16557,14 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!4 &1794366253 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4132121503028676, guid: 22e4cc8a19246af4e89a192d9bd6d32b,
     type: 2}
   m_PrefabInternal: {fileID: 375699226}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!4 &1803505832
 =======
@@ -16448,6 +16572,8 @@ Transform:
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!4 &1803505832 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4975548201391030, guid: 7bef1b954d282e94697de6aad20ad971,
@@ -17467,6 +17593,7 @@ Transform:
   m_PrefabInternal: {fileID: 1931513833}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1946692806
 GameObject:
   m_ObjectHideFlags: 0
@@ -17501,6 +17628,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1 &1947817450 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1945971614329842, guid: 22e4cc8a19246af4e89a192d9bd6d32b,
@@ -17535,6 +17664,7 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ca98b6f171c799346b6a92575c3b3949, type: 3}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &1949171496
 GameObject:
@@ -17573,6 +17703,8 @@ Transform:
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1001 &1958774104
 Prefab:
   m_ObjectHideFlags: 0
@@ -18236,6 +18368,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &2007381049
 GameObject:
   m_ObjectHideFlags: 0
@@ -18354,6 +18487,8 @@ Prefab:
 >>>>>>> 60178cc40ec40983443312fcf0dc1413e7635032
 =======
 >>>>>>> parent of c3a711d... Some Changes
+=======
+>>>>>>> parent of 60178cc... Teren i spilja
 --- !u!1001 &2012700016
 Prefab:
   m_ObjectHideFlags: 0
