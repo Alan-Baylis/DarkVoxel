@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4201396313181138}
   - component: {fileID: 65175556850073398}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Arm2_R_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4187838962075840}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4157459710376960}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm2_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4080656421724598}
   - component: {fileID: 65733300993414598}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Leg_R_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4038165278806002}
   - component: {fileID: 137765472635539716}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Baby_Myconid
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4517460749302468}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Hip
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4785064324467760}
   - component: {fileID: 65471665409858002}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Arm2_L_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4610073966457248}
   - component: {fileID: 65432535856265684}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Arm1_R_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4569254983863492}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Leg_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4161665058952176}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 114082801571514958}
   - component: {fileID: 114534805011295042}
   - component: {fileID: 114511289875780136}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: MyconidPrefab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4980541011748074}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm3_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4951382522858018}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Leg_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4446127282435932}
   - component: {fileID: 65914020758912526}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: LockOnCollider
   m_TagString: LockOnCollider
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4644986768801382}
   - component: {fileID: 65421077929481140}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Hip_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4072869959328998}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Armature
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4787510318901292}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm1_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4174050219530252}
   - component: {fileID: 65781356309800548}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Body_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4087728032401532}
   - component: {fileID: 65087209612010312}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Arm3_L_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4871871777043098}
   - component: {fileID: 65152600796473722}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Leg_L_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4635087138281862}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm2_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4737960544754936}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4230716094868974}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm3_R
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4906737960637890}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm1_L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 65423535544130674}
   - component: {fileID: 65152381423926952}
   - component: {fileID: 65458416470424108}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Head_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4308730144730960}
   - component: {fileID: 65280362526980450}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Arm1_L_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4680999732193860}
   - component: {fileID: 65891803232489298}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Myconid_Arm3_R_Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1054,10 +1054,13 @@ MonoBehaviour:
   Charisma:
     _baseValue: 0
   CanRegainStamina: 1
+  DisableScriptsOnDeath: 1
   CharacterAC: {fileID: 0}
-  Agent: {fileID: 0}
+  Agent: {fileID: 195317280796542832}
   RB: {fileID: 0}
   AttackDamage: 10
+  AttackStaminaUsage: 0
+  HeavyAttackStaminaUsage: 0
   HitThisAttack: 0
   DamageEnabled: 0
   DamagedPlayerThisAttack: 0
