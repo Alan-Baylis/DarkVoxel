@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public Transform EnemyTransform;
+
     public bool IsFlying = false;
 
     public float Speed = 10.0f;
 
     public int Damage = 5;
 
-    private Transform _playerTransform;
+    private Transform _playerTransform;   
 
     private PlayerStats _playerStats;
     private Animator _playerAC;
@@ -82,6 +84,10 @@ public class Projectile : MonoBehaviour
                     Destroy (gameObject);
                 }
             }
-        }        
+        }
+        else if(other.transform.root.transform != EnemyTransform)
+        {
+            Destroy ();
+        }
     }
 }
