@@ -32,7 +32,8 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] private float _runTimer = 0.75f;                       //time in sec that dictates how long the player needs to hold run button before running, or how fast must he release the button fo rolling
     private float _currentTimer;
 
-    private GameObject _lockedOnEnemy;        
+    private GameObject _lockedOnEnemy;
+    private CharacterStats _lockedOnEnemyStats;
 
     private bool _targetChanged = false;
     private bool _isResting = false;                                        //Disables running emidiately after stamina is regained if the run button is stil pressed down  
@@ -181,6 +182,7 @@ public class PlayerInputManager : MonoBehaviour
                                 _lockedOnEnemy = enemy;
 
                                 _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = true;
+                                _lockedOnEnemyStats = enemy.GetComponent<EnemyStats> ();
 
                                 _playerAC.SetBool ("LockedOn", true);
                                 PlayerMovement.LockedOn = true;
@@ -227,6 +229,7 @@ public class PlayerInputManager : MonoBehaviour
                                     _lockedOnEnemy = enemy;
 
                                     _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = true;
+                                    _lockedOnEnemyStats = enemy.GetComponent<EnemyStats> ();
 
                                     _playerAC.SetBool ("LockedOn", true);
                                     PlayerMovement.LockedOn = true;
@@ -273,6 +276,7 @@ public class PlayerInputManager : MonoBehaviour
                                     _lockedOnEnemy = enemy;
 
                                     _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = true;
+                                    _lockedOnEnemyStats = enemy.GetComponent<EnemyStats> ();
 
                                     _playerAC.SetBool ("LockedOn", true);
                                     PlayerMovement.LockedOn = true;
@@ -290,7 +294,7 @@ public class PlayerInputManager : MonoBehaviour
                 }
             }
         }
-        else if(Input.GetAxis("Mouse X") > -0.9f && Input.GetAxis("Mouse X") < 0.9f)
+        else if(Input.GetAxis("HorizontalCameraMove") > -0.9f && Input.GetAxis("HorizontalCameraMove") < 0.9f)
         {
             _targetChanged = false;
         }
@@ -303,8 +307,9 @@ public class PlayerInputManager : MonoBehaviour
             {
                 PlayerMovement.LockedOn = false;
                 _playerAC.SetBool ("LockedOn", false);
-                lowestAngle = -1f;
-                _characterControllerCamera.enabled = true;
+                lowestAngle = -1f;                
+                _characterControllerCamera.enabled = true;               
+
                 EnemyController enemyController = _lockedOnEnemy.GetComponent<EnemyController> ();
                 enemyController.LockedOn = false;
 
@@ -324,14 +329,30 @@ public class PlayerInputManager : MonoBehaviour
         {
             distanceToEnemy = Vector3.Distance (transform.position, _lockedOnEnemy.transform.position);
 
+            if (_lockedOnEnemyStats.Dead)
+            {
+                PlayerMovement.LockedOn = false;
+                _playerAC.SetBool ("LockedOn", false);
+                lowestAngle = -1f;
+                distanceToEnemy = 0;
+                _lockOnCamera.enabled = false;              
+                _characterControllerCamera.enabled = true;                
+                _lockOnCamera.LockOnTarget = null;
+                _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = false;
+                _lockedOnEnemy.GetComponent<EnemyController> ().OnList = false;
+                _visibleEnemies.Remove (_lockedOnEnemy);
+                _lockedOnEnemy = null;
+            }            
+
             if(distanceToEnemy > _playerManager.SetupFields.LockOnRadius)
             {
                 PlayerMovement.LockedOn = false;
                 _playerAC.SetBool ("LockedOn", false);
                 lowestAngle = -1f;
                 distanceToEnemy = 0;
-                _lockOnCamera.enabled = false;
+                _lockOnCamera.enabled = false;                
                 _characterControllerCamera.enabled = true;
+                _characterControllerCamera._cameraLookAngle = Camera.main.transform.localRotation.y;
                 _lockOnCamera.LockOnTarget = null;
                 _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = false;
 
@@ -460,7 +481,7 @@ public class PlayerInputManager : MonoBehaviour
         if (!_attacking)
         {
 
-            if ((Input.GetButtonDown ("HeavyAttack") || Input.GetAxis("HeavyAttack") >= 0.8f) && _gameManager.StateOfGame != GameManager.GameState.InMenu && !_playerAC.GetBool ("AttackQeued"))
+            if ((Input.GetButtonDown ("HeavyAttack") || Input.GetAxis("HeavyAttack") >= 0.5f) && _gameManager.StateOfGame != GameManager.GameState.InMenu && !_playerAC.GetBool ("AttackQeued"))
             {
             
                 if (_playerStats.CurrentStamina > 0)

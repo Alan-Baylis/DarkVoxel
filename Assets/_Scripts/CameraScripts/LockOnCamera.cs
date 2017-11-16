@@ -17,7 +17,14 @@ public class LockOnCamera : MonoBehaviour
     [SerializeField] private float _minimumCameraTilt;
     [SerializeField] private float _maximumCameraTilt;
     
-    private CharacterControllerCamera _characterControllerCamera;    
+    private CharacterControllerCamera _characterControllerCamera;   
+
+    private Vector3 _lastForward;
+    private Vector3 _currentForward;
+
+    private float _cameraLookAngle;
+
+    public float angle;
     
     private void Awake ( )
     {
@@ -27,11 +34,25 @@ public class LockOnCamera : MonoBehaviour
         }       
     }
 
+    private void OnDisable ( )
+    {
+        _characterControllerCamera._cameraLookAngle = _cameraLookAngle;
+    }  
+
     private void Start ( )
     {
-        _characterControllerCamera = CharacterControllerCamera.instance;        
+        _characterControllerCamera = CharacterControllerCamera.instance;
+
+        _cameraLookAngle = _characterControllerCamera._cameraLookAngle;
+        _lastForward = transform.forward;
     }
-   
+
+    private void OnEnable ( )
+    {
+        _cameraLookAngle = _characterControllerCamera._cameraLookAngle;
+        _lastForward = MainCameraPivot.transform.forward;
+    }
+
     private void LateUpdate ( )
     {
         PositionCamera ();
@@ -41,12 +62,25 @@ public class LockOnCamera : MonoBehaviour
     private void FocusOnTarget()
     {
         if (LockOnTarget != null)
-        {
+        {            
             Vector3 direction = LockOnTarget.transform.position - MainCameraPivot.transform.position;
-            Quaternion newRotation = Quaternion.LookRotation (direction); 
-            Mathf.Clamp (newRotation.x, _minimumCameraTilt, _maximumCameraTilt);
+
+            _currentForward = MainCameraPivot.transform.forward;
+
+            angle = Vector3.Angle (_currentForward, _lastForward);
+           
+            if(Vector3.Cross(_currentForward, _lastForward).y > 0)
+            {
+                angle = -angle;
+            }
+            
+            _cameraLookAngle += angle;             
+
+            Quaternion newRotation = Quaternion.LookRotation (direction);            
             MainCameraPivot.transform.rotation = Quaternion.Lerp (MainCameraPivot.transform.rotation, newRotation, 10.0f * Time.deltaTime);
             MainCameraPivot.transform.localEulerAngles = new Vector3 (Mathf.Clamp (MainCameraPivot.transform.localEulerAngles.x, _minimumCameraTilt, _maximumCameraTilt), MainCameraPivot.transform.localEulerAngles.y, 0.0f);
+
+            _lastForward = _currentForward;
         }                
     }
 

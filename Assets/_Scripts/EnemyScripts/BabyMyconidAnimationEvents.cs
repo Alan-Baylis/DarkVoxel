@@ -46,7 +46,7 @@ public class BabyMyconidAnimationEvents : MonoBehaviour
 
     public void ThrowRock()
     {
-        if (_projectile != null)
+        if (_spawnedRock != null)
         {
             _projectile = _spawnedRock.GetComponent<Projectile> ();
             _projectile.EnemyTransform = transform;
