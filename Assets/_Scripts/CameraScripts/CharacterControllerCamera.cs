@@ -12,8 +12,6 @@ public class CharacterControllerCamera : PivotBasedCamera
     // 			Camera      
     public bool UseJoystick = false;
 
-    public Animator PlayerAC;
-
     private float camX;
     private float camY;
 
@@ -109,19 +107,12 @@ public class CharacterControllerCamera : PivotBasedCamera
             camX = Input.GetAxis ("Mouse X");
             camY = Input.GetAxis ("Mouse Y");
         }
-
+         
 
         // Adjust the look angle by an amount proportional to the turn speed and horizontal input
-        if (camX == 0)
+        if(camX == 0)
         {
-            if (PlayerAC.GetBool ("IsRunning"))
-            {
-                _cameraLookAngle += moveX * (_cameraTurnSpeed / 1.5f);
-            }
-            else
-            {
-                _cameraLookAngle += moveX * (_cameraTurnSpeed / 4);
-            }
+            _cameraLookAngle += moveX * _cameraTurnSpeed;
         }
         else 
         {

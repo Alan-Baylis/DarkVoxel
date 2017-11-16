@@ -7,9 +7,6 @@ public class EnemyStats : CharacterStats
 {
     public int AttackDamage;
 
-    public int AttackStaminaUsage;
-    public int HeavyAttackStaminaUsage;
-
     public bool HitThisAttack = false;
     public bool DamageEnabled = false;
     public bool DamagedPlayerThisAttack = false;
@@ -23,7 +20,9 @@ public class EnemyStats : CharacterStats
     {
         _playerAnimationEvents = GameObject.Find ("Player").GetComponent<PlayerAnimationEvents> ();
         _playerStats = GameObject.Find ("Player").GetComponent<PlayerStats> ();
-        CharacterAC = GetComponent<Animator> ();      
+        CharacterAC = GetComponent<Animator> ();
+        Agent = GetComponent<NavMeshAgent> ();
+        RB = GetComponent<Rigidbody> ();
     }
 
     private void OnTriggerEnter ( Collider other )    
