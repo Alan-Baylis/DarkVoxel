@@ -112,7 +112,7 @@ public class PlayerAnimationEvents : MonoBehaviour {
             _playerStats.CurrentStamina = 0.0f;
         }
 
-        _playerStats.CanRegainStamina = false;
+        PlayerStats.instance.CanRegainStamina = false;
     }
 
     public void DisableStaminaGainOnHeavyAttack ()

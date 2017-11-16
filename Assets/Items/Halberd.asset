@@ -23,6 +23,6 @@ MonoBehaviour:
   CoveredMeshRegions: 
   ScalingStat: 00000000
   ScalePercent: 0a000000
-  BaseDamage: 20
+  BaseDamage: 10
   BaseArmour: 0
   HeavyAttackDamageModifier: 2

@@ -11,8 +11,6 @@ public class PlayerInputManager : MonoBehaviour
 
     public static Vector3 MoveDirection;
 
-    public float MenuCameraOffset;
-
     public GameObject Menu;
     public GameObject EquipmentHUD;
     public GameObject MainCameraRig;
@@ -32,12 +30,13 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] private float _runTimer = 0.75f;                       //time in sec that dictates how long the player needs to hold run button before running, or how fast must he release the button fo rolling
     private float _currentTimer;
 
-    private GameObject _lockedOnEnemy;        
+    private GameObject _lockedOnEnemy;    
+
+    private Transform _inventoryCameraPosition;
 
     private bool _targetChanged = false;
-    private bool _isResting = false;                                        //Disables running emidiately after stamina is regained if the run button is stil pressed down  
-    private bool _attacking = false;
-
+    private bool _isResting = false;                                        //Disables running emidiately after stamina is regained if the run button is stil pressed down                                                 
+    
     private int _numberOfPreviousColliders;    
 
     private Vector3 _directionToEnemy;
@@ -48,8 +47,6 @@ public class PlayerInputManager : MonoBehaviour
 
     private int _layerMask = 1 << 9;
 
-    
-
     private void Start ( )
     {
         _playerMovement = GetComponent<PlayerMovement> ();
@@ -59,7 +56,8 @@ public class PlayerInputManager : MonoBehaviour
         _playerAC = GetComponent<Animator> ();
         _gameManager = GameManager.instance;
         _playerStats = PlayerStats.instance;
-        _currentTimer = _runTimer;        
+        _currentTimer = _runTimer;
+        _inventoryCameraPosition = transform.Find ("InventoryCameraPosition");
     }
 
     private void Update ( )
@@ -94,15 +92,6 @@ public class PlayerInputManager : MonoBehaviour
         if (MoveMagnitude > 1.0f)
         {
             MoveMagnitude = 1.0f;
-        }
-
-        if(Horizontal != 0.0f || Vertical != 0.0f)
-        {
-            _playerAC.SetBool ("IsMoving", true);
-        }
-        else
-        {
-            _playerAC.SetBool ("IsMoving", false);
         }
     }  
 
@@ -164,20 +153,20 @@ public class PlayerInputManager : MonoBehaviour
             {
                 foreach (GameObject enemy in _visibleEnemies)
                 {
-                    _directionToEnemy = ((enemy.transform.position + enemy.transform.up) - Camera.main.transform.position);
+                    _directionToEnemy = (enemy.transform.position - transform.position);
                     angle = Vector3.Angle (_directionToEnemy, Camera.main.transform.forward);
 
                     if (lowestAngle == -1 || lowestAngle > angle)
                     {
                         RaycastHit hit;
 
-                        Debug.DrawRay (Camera.main.transform.position, _directionToEnemy);
+                        Debug.DrawRay (transform.position + transform.up, _directionToEnemy);
 
-                        if (Physics.Raycast(Camera.main.transform.position, _directionToEnemy, out hit, _playerManager.SetupFields.LockOnRadius))
+                        if (Physics.Raycast (transform.position + transform.up, _directionToEnemy, out hit, _playerManager.SetupFields.LockOnRadius, _layerMask))
                         {
                             if (hit.collider.transform.root.gameObject == enemy)
                             {
-                                _lockOnCamera.LockOnTarget = enemy.transform;                               
+                                _lockOnCamera.LockOnTarget = enemy.transform;
                                 _lockedOnEnemy = enemy;
 
                                 _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = true;
@@ -198,7 +187,7 @@ public class PlayerInputManager : MonoBehaviour
         #endregion
 
         #region ChangeLockOnTarget
-        else if(Input.GetAxis("HorizontalCameraMove") >= 0.9f && !_targetChanged && _lockedOnEnemy != null)
+        else if(Input.GetAxis("Mouse X") >= 0.9f && !_targetChanged && _lockedOnEnemy != null)
         {
             float smallestDirectionAngle = -1;
 
@@ -208,7 +197,7 @@ public class PlayerInputManager : MonoBehaviour
 
                 if(!enemyController.LockedOn)
                 {
-                    _directionToEnemy = ((enemy.transform.position + enemy.transform.up) - Camera.main.transform.position);
+                    _directionToEnemy = (enemy.transform.position - (transform.position + transform.up));
 
                     Vector3 sideDirection = Vector3.Cross (transform.forward, _directionToEnemy);
                     float directionAngle = Vector3.Dot (sideDirection, transform.up);
@@ -219,11 +208,11 @@ public class PlayerInputManager : MonoBehaviour
                         {
                             RaycastHit hit;
 
-                            if (Physics.Raycast (Camera.main.transform.position, _directionToEnemy, out hit, _playerManager.SetupFields.LockOnRadius))
+                            if (Physics.Raycast (transform.position + transform.up, _directionToEnemy, out hit, _playerManager.SetupFields.LockOnRadius, _layerMask))
                             {
                                 if (hit.collider.transform.root.gameObject == enemy)
                                 {
-                                    _lockOnCamera.LockOnTarget = enemy.transform;                                    
+                                    _lockOnCamera.LockOnTarget = enemy.transform;
                                     _lockedOnEnemy = enemy;
 
                                     _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = true;
@@ -244,7 +233,7 @@ public class PlayerInputManager : MonoBehaviour
                 }
             }
         }
-        else if(Input.GetAxis("HorizontalCameraMove") <= -0.9f && !_targetChanged && _lockedOnEnemy != null)
+        else if(Input.GetAxis("Mouse X") <= -0.9f && !_targetChanged && _lockedOnEnemy != null)
         {
             float smallestDirectionAngle = -1;
 
@@ -254,7 +243,7 @@ public class PlayerInputManager : MonoBehaviour
 
                 if (!enemyController.LockedOn)
                 {
-                    _directionToEnemy = ((enemy.transform.position + enemy.transform.up) - Camera.main.transform.position);
+                    _directionToEnemy = (enemy.transform.position - (transform.position + transform.up));
 
                     Vector3 sideDirection = Vector3.Cross (transform.forward, _directionToEnemy);
                     float directionAngle = Vector3.Dot (sideDirection, transform.up);
@@ -265,11 +254,11 @@ public class PlayerInputManager : MonoBehaviour
                         {
                             RaycastHit hit;
 
-                            if (Physics.Raycast (Camera.main.transform.position, _directionToEnemy, out hit, _playerManager.SetupFields.LockOnRadius))
+                            if (Physics.Raycast (transform.position + transform.up, _directionToEnemy, out hit, _playerManager.SetupFields.LockOnRadius, _layerMask))
                             {
                                 if (hit.collider.transform.root.gameObject == enemy)
                                 {
-                                    _lockOnCamera.LockOnTarget = enemy.transform;                                    
+                                    _lockOnCamera.LockOnTarget = enemy.transform;
                                     _lockedOnEnemy = enemy;
 
                                     _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = true;
@@ -457,32 +446,18 @@ public class PlayerInputManager : MonoBehaviour
 
     private void HeavyAttack ( )
     {
-        if (!_attacking)
+        if (Input.GetButtonDown ("HeavyAttack") && _gameManager.StateOfGame != GameManager.GameState.InMenu && !_playerAC.GetBool ("AttackQeued"))
         {
-
-            if ((Input.GetButtonDown ("HeavyAttack") || Input.GetAxis("HeavyAttack") >= 0.8f) && _gameManager.StateOfGame != GameManager.GameState.InMenu && !_playerAC.GetBool ("AttackQeued"))
+            if (_playerStats.CurrentStamina > 0)
             {
-            
-                if (_playerStats.CurrentStamina > 0)
+                _playerAC.SetTrigger ("HeavyAttack");  
+                
+                if(_playerAC.GetBool("Attacking") || _playerAC.GetBool ("HeavyAttacking"))
                 {
-                    _attacking = true;
-                    _playerAC.SetTrigger ("HeavyAttack");
-
-                    if (_playerAC.GetBool ("Attacking") || _playerAC.GetBool ("HeavyAttacking"))
-                    {
-                        _playerAC.SetBool ("AttackQeued", true);
-                    }
-                }                
+                    _playerAC.SetBool ("AttackQeued", true);
+                }
             }
         }
-        else
-        {
-            if(Input.GetAxis("HeavyAttack") < 0.1f)
-            {
-                _attacking = false;
-            }
-        }
-       
     }
 
     private void Block ( )
@@ -504,18 +479,18 @@ public class PlayerInputManager : MonoBehaviour
             if (Menu.activeSelf)
             {
                 Menu.SetActive (false);
-                EquipmentHUD.SetActive (true);                
+                EquipmentHUD.SetActive (true);
+                _characterControllerCamera.enabled = true;
                 _gameManager.StateOfGame = GameManager.GameState.Playing;
-                StartCoroutine (SetInventoryCameraPosition ());
             }
             else
             {
                 Menu.SetActive (true);
-                EquipmentHUD.SetActive (false);                
+                EquipmentHUD.SetActive (false);
+                _characterControllerCamera.enabled = false;
                 StartCoroutine (SetInventoryCameraPosition ());
                 Menu.GetComponentInChildren<Button> ().Select ();
                 _gameManager.StateOfGame = GameManager.GameState.InMenu;
-                
             }
         }
     }
@@ -528,25 +503,18 @@ public class PlayerInputManager : MonoBehaviour
         }
     }
 
-    IEnumerator SetInventoryCameraPosition ( )
+    IEnumerator SetInventoryCameraPosition()
     {
-        float time = 2f;
-
-        while (time > 0.0f)
+        while (Vector3.Distance (MainCameraRig.transform.position, _inventoryCameraPosition.position) > 0.05f)
         {
-            if (Menu.activeSelf)
-            {
-                MainCameraRigPivot.transform.localPosition = Vector3.Lerp (MainCameraRigPivot.transform.localPosition, new Vector3 (0.0f, 0.0f, MenuCameraOffset), 1f);
-                time -= Time.deltaTime;
+            MainCameraRig.transform.position = Vector3.Lerp (MainCameraRig.transform.position, _inventoryCameraPosition.position, 0.1f);
+            MainCameraRigPivot.transform.rotation = Quaternion.Lerp (MainCameraRigPivot.transform.rotation, _inventoryCameraPosition.rotation, 0.1f);
 
-                yield return 0;
-            }
-            else
-            {
-                MainCameraRigPivot.transform.localPosition = Vector3.Lerp (MainCameraRigPivot.transform.localPosition, new Vector3 (0.0f, 0.0f, 0.0f), 1f);
-                time -= Time.deltaTime;
-            }
-        }        
+            yield return null;
+        }
+
+
+        yield return 0;
     }
 
     IEnumerator Countdown ( )

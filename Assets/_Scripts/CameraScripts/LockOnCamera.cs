@@ -6,7 +6,7 @@ public class LockOnCamera : MonoBehaviour
     public static LockOnCamera instance;
 
     public Transform LockOnTarget;
-   
+
     public Transform PlayerTransform;
     public Transform MainCameraPivot;
     
@@ -30,8 +30,8 @@ public class LockOnCamera : MonoBehaviour
     private void Start ( )
     {
         _characterControllerCamera = CharacterControllerCamera.instance;        
-    }
-   
+    }      
+
     private void LateUpdate ( )
     {
         PositionCamera ();
