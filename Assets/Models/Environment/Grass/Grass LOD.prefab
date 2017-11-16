@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 193529918251051490}
   - component: {fileID: 33728952900283224}
   - component: {fileID: 23358326001592712}
-  - component: {fileID: 205761449497729052}
   m_Layer: 0
   m_Name: Grass LOD
   m_TagString: Untagged
@@ -55,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1277962758428164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 177.04095, y: 11.001076, z: 249.44157}
+  m_LocalPosition: {x: 102.57611, y: 4.9987793, z: 161.48877}
   m_LocalScale: {x: 0.20606855, y: 0.16754374, z: 0.17647806}
   m_Children:
   - {fileID: 4930062115512520}
@@ -99,7 +98,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -171,20 +170,3 @@ Tree:
   m_SpeedTreeWindAsset: {fileID: 0}
   m_TreeData: {fileID: 114083892174258734, guid: b6a0fb32cac46124c9f82684633c82a4,
     type: 2}
---- !u!205 &205761449497729052
-LODGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1277962758428164}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.019053936, y: 0.99896777, z: -0.04123652}
-  m_Size: 2.0807297
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.00659442
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 23698235613048402}
-  m_Enabled: 1
