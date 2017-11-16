@@ -9683,6 +9683,27 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114843861094456426, guid: 529a836a449d58244b49a0d23ed232d0,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3bf3930360a0c0047bfb1fa7ccb14129,
+        type: 3}
+    - target: {fileID: 114520925030265924, guid: 529a836a449d58244b49a0d23ed232d0,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114520925030265924, guid: 529a836a449d58244b49a0d23ed232d0,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114520925030265924, guid: 529a836a449d58244b49a0d23ed232d0,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 529a836a449d58244b49a0d23ed232d0, type: 2}
   m_IsPrefabParent: 0
