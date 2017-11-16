@@ -12,6 +12,8 @@ public class CharacterControllerCamera : PivotBasedCamera
     // 			Camera      
     public bool UseJoystick = false;
 
+    public Transform Pivot;
+
     public Animator PlayerAC;
 
     private float camX;
@@ -59,12 +61,6 @@ public class CharacterControllerCamera : PivotBasedCamera
 
     protected void Update ( )
     {
-        if(!Enabled)
-        {
-            _cameraLookAngle = _pivotTransform.transform.eulerAngles.y;
-            Enabled = true;
-        }
-
         HandleRotationMovement ();
         if(_lockCursor && Input.GetMouseButtonUp(0))
         {

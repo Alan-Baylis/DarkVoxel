@@ -516,21 +516,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1562408829091894
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4703371338014092}
-  m_Layer: 8
-  m_Name: InventoryCameraPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1565515522869272
 GameObject:
   m_ObjectHideFlags: 1
@@ -1555,19 +1540,6 @@ Transform:
   m_Father: {fileID: 4180866713098794}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4703371338014092
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1562408829091894}
-  m_LocalRotation: {x: -0.009678286, y: 0.97982526, z: -0.0490045, w: -0.19351344}
-  m_LocalPosition: {x: -1.851, y: 0.986, z: 0.367}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4975548201391030}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 5.7260003, y: 202.344, z: 0}
 --- !u!4 &4728964024399140
 Transform:
   m_ObjectHideFlags: 1
@@ -1579,7 +1551,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4975548201391030}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4741086281367314
 Transform:
@@ -1764,11 +1736,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322803087476284}
   m_LocalRotation: {x: -0, y: 0.87318397, z: -0, w: 0.4873908}
-  m_LocalPosition: {x: 102.910095, y: 5, z: 163.45464}
+  m_LocalPosition: {x: 78.88, y: 7.88, z: 176.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4523147832925808}
-  - {fileID: 4703371338014092}
   - {fileID: 4728964024399140}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2144,6 +2115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25844f3ca859b0c43b5224b8d63ff978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuCameraOffset: 1.5
   Menu: {fileID: 0}
   EquipmentHUD: {fileID: 0}
   MainCameraRig: {fileID: 0}
@@ -2205,6 +2177,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bb90567d41b323547afdd245c86b4448, type: 2}
   - {fileID: 11400000, guid: 0052418676dd1974aa45e3fbfba3ef97, type: 2}
   - {fileID: 11400000, guid: a6fe1da91636e5a4d8a386800bc8169b, type: 2}
+  - {fileID: 11400000, guid: 76b49ea6ed5b0ec4498830d1ecdc9fa7, type: 2}
+  - {fileID: 11400000, guid: 41480de3cf28ca44b80228b4bb8ab566, type: 2}
   PlayerAC: {fileID: 95858598991353824}
 --- !u!114 &114778390946750622
 MonoBehaviour:
@@ -2274,6 +2248,7 @@ MonoBehaviour:
     _baseValue: 0
   CanRegainStamina: 1
   DisableScriptsOnDeath: 0
+  Dead: 0
   CharacterAC: {fileID: 95858598991353824}
   Agent: {fileID: 0}
   RB: {fileID: 0}

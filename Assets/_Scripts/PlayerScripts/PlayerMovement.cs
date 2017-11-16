@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
     //Movement while locked on
     private void LockedOnMovement( )
     {
-        if(_playerAC.GetBool("LockedOn") && !_playerAC.GetBool("IsRunning"))
+        if(_playerAC.GetBool("LockedOn") && !_playerAC.GetBool("IsRunning") && _playerAC.GetBool("RollFinished"))
         {
             _targetDirection = _lockOnCamera.LockOnTarget.position - transform.position;
             _targetDirection.y = 0.0f;

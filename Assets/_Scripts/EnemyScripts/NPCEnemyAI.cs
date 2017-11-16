@@ -31,7 +31,17 @@ public class NPCEnemyAI : MonoBehaviour
 
         if(_distanceToPlayer <= AttackRange)
         {
-            _enemyNPCAC.SetTrigger ("Attack");
+            if (!_enemyNPCAC.GetBool ("IsAttacking") && !_enemyNPCAC.GetBool ("IsHeavyAttacking"))
+            {
+                transform.LookAt (Player);
+                _enemyNPCAC.SetTrigger ("Attack");
+            }
+        }
+
+        if(_distanceToPlayer > AttackRange && _distanceToPlayer <= MoveInToMeleeRange)
+        {
+            transform.LookAt (Player);
+            _enemyNPCAC.SetFloat ("Vertical", 1.0f);
         }
     }
 
