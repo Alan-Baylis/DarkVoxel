@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a7860337937ce4b945557b1b31a805, type: 3}
+  m_Name: FayBuckler
+  m_EditorClassIdentifier: 
+  Name: Buckler
+  Icon: {fileID: 21300000, guid: a01aa2b0c1365cb48929227475ba2e99, type: 3}
+  TypeOfItem: 1
+  IsDefaultItem: 0
+  Stackable: 0
+  EquipSlot: 4
+  TypeOfWeapon: 7
+  Mesh: {fileID: 137359412476763920, guid: 4e4a28362ed84c64085ba807914e3dce, type: 2}
+  MeshNumberTwo: {fileID: 0}
+  CoveredMeshRegions: 
+  ScalingStat: 
+  ScalePercent: 
+  BaseDamage: 0
+  BaseArmour: 0
+  HeavyAttackDamageModifier: 0

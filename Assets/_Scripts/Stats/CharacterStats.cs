@@ -27,6 +27,8 @@ public class CharacterStats : MonoBehaviour
     public Stat Charisma;
 
     public bool CanRegainStamina = true;
+    public bool DisableScriptsOnDeath = true;
+    public bool Dead = false;
 
     public Animator CharacterAC;
 
@@ -87,34 +89,27 @@ public class CharacterStats : MonoBehaviour
 
     private void Die()
     {
+        Dead = true;
+
         if (!CharacterAC.GetBool ("Dead"))
         {
             CharacterAC.SetTrigger ("Die");
             CharacterAC.SetBool ("Dead", true);
-        }
-
-        Collider [] colliders = GetComponentsInChildren<Collider> ();
+        }        
         MonoBehaviour [] scripts = GetComponents<MonoBehaviour> ();
 
-        foreach (Collider collider in colliders)
+        if (DisableScriptsOnDeath)
         {
-            //collider.enabled = false;
+            foreach (MonoBehaviour script in scripts)
+            {
+                script.enabled = false;
+            }
         }
 
-        if(Agent != null)
+        if (Agent != null)
         {
-            Agent.enabled = false;
-        }
-
-        foreach (MonoBehaviour script in scripts)
-        {
-            script.enabled = false;
-        } 
-        
-        if(RB != null)
-        {
-            //RB.useGravity = false;
-            //RB.isKinematic = true;
+            Agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+            //Agent.enabled = false;
         }
     }     
 }

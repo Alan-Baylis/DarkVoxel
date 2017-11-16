@@ -67,7 +67,7 @@ public class EquipmentManager : MonoBehaviour
     {
         //Find outwhat slot the item fits in        
         int slotIndex = (int) newEquipment.EquipSlot;          
-        Equipment oldEquipment = Unequip (slotIndex);
+        Equipment oldEquipment = Unequip(slotIndex);
         #region WeaponType
         switch (newEquipment.TypeOfWeapon)
         {
