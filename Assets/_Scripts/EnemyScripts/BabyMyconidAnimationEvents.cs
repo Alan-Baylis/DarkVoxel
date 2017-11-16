@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAnimationEvents : MonoBehaviour
+public class BabyMyconidAnimationEvents : MonoBehaviour
 {
     public GameObject Rock;
 
@@ -46,13 +46,17 @@ public class EnemyAnimationEvents : MonoBehaviour
 
     public void ThrowRock()
     {
-        _projectile = _spawnedRock.GetComponent<Projectile> ();
-        _spawnedRock.transform.parent = null;
-        Rigidbody rb = _spawnedRock.AddComponent<Rigidbody> ();
-        rb.useGravity = false;
-        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-        _projectile.enabled = true;
-        _projectile.IsFlying = true;
+        if (_projectile != null)
+        {
+            _projectile = _spawnedRock.GetComponent<Projectile> ();
+            _projectile.EnemyTransform = transform;
+            _spawnedRock.transform.parent = null;
+            Rigidbody rb = _spawnedRock.AddComponent<Rigidbody> ();
+            rb.useGravity = false;
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            _projectile.enabled = true;
+            _projectile.IsFlying = true;
+        }
     }
 }
 

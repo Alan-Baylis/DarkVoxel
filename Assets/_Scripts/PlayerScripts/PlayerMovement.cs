@@ -39,9 +39,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move ( )
     {
-        bool moving = PlayerInputManager.Horizontal != 0.0f || PlayerInputManager.Vertical != 0.0f;
-        _playerAC.SetBool ("IsMoving", moving);
-
         if (!_playerAC.GetBool("LockedOn"))
         {
             FreeMovement ();
