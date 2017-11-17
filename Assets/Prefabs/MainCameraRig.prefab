@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 124729579009197476}
   - component: {fileID: 81387223319219084}
   - component: {fileID: 114664111571685726}
-  m_Layer: 0
+  - component: {fileID: 114574123755500520}
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -42,7 +43,7 @@ GameObject:
   - component: {fileID: 114175903300525008}
   - component: {fileID: 114079429797693524}
   - component: {fileID: 114132772033742302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainCameraRig
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -57,7 +58,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4049377887358002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pivot
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -191,6 +192,8 @@ MonoBehaviour:
   _cameraSmoothTime: 5
   _minimumCameraTilt: 20
   _maximumCameraTilt: 30
+  _characterControllerCamera: {fileID: 114175903300525008}
+  angle: 0
 --- !u!114 &114175903300525008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,7 +208,8 @@ MonoBehaviour:
   _target: {fileID: 0}
   _autoTargetPlayer: 0
   _updateType: 1
-  UseJoystick: 0
+  UseJoystick: 1
+  Pivot: {fileID: 4049377887358002}
   PlayerAC: {fileID: 0}
   _cameraMoveSpeed: 10
   _cameraTurnSmoothing: 0
@@ -217,6 +221,18 @@ MonoBehaviour:
   _cameraLookAngle: 0
   TransformTargetRotation: {x: 0, y: 0, z: 0, w: 0}
   Enabled: 1
+--- !u!114 &114574123755500520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114296473964320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 376e4e3764bb0454aa65868f340be642, type: 2}
 --- !u!114 &114664111571685726
 MonoBehaviour:
   m_ObjectHideFlags: 1
