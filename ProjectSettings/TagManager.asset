@@ -16,7 +16,6 @@ TagManager:
   - Projectile
   - Particle
   - SurfaceChanger
-  - Cave
   layers:
   - Default
   - TransparentFX

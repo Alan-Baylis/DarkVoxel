@@ -16,8 +16,6 @@ public class EnemyStats : CharacterStats
 
     public Animator PlayerAC;
 
-    public AudioSource HitSound;
-
     private PlayerAnimationEvents _playerAnimationEvents;
     private PlayerStats _playerStats;
 
@@ -30,14 +28,13 @@ public class EnemyStats : CharacterStats
 
     private void OnTriggerEnter ( Collider other )    
     {
-        if (other.gameObject.CompareTag("PlayerWeapon") && !HitThisAttack && _playerAnimationEvents.DamageEnabled && !Dead)
+        if (other.gameObject.CompareTag("PlayerWeapon") && !HitThisAttack && _playerAnimationEvents.DamageEnabled)
         {
             HitThisAttack = true;
 
             _playerAnimationEvents.EnemiesHitThisAttack.Add (this);
 
-            TakeDamage (_playerStats.Damage.GetValue());
-            HitSound.Play ();
+            TakeDamage (_playerStats.Damage.GetValue());                       
         }
 
         if(other.gameObject.CompareTag("Shield") && DamageEnabled && !DamagedPlayerThisAttack)
