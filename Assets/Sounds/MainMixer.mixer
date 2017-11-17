@@ -18,11 +18,8 @@ AudioMixerController:
   m_AudioMixerGroupViews:
   - guids:
     - 4f94d15248ca9b54796f36d5c397c967
-<<<<<<< HEAD
-=======
     - 4b81ad4113909ea419cff83556fe31f8
     - 386fcf6d73ffaab488d02c3ad060997d
->>>>>>> Filip
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -34,13 +31,9 @@ AudioMixerGroupController:
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 4f94d15248ca9b54796f36d5c397c967
-<<<<<<< HEAD
-  m_Children: []
-=======
   m_Children:
   - {fileID: 243708976041320804}
   - {fileID: 243165398225182490}
->>>>>>> Filip
   m_Volume: a770c00d7323240428004917bc3c6689
   m_Pitch: 3b89af7069f9b1c4da70a2ed1b4c1da8
   m_Effects:
@@ -70,10 +63,6 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 1eb5ea7bf32df474898a50f70cd2014c
-<<<<<<< HEAD
-  m_FloatValues: {}
-  m_TransitionOverrides: {}
-=======
   m_FloatValues:
     65a0e731938021547ad92732bcb929b7: -2878
     3411cf32612d74245bc1391419164044: 0.58
@@ -147,4 +136,3 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
->>>>>>> Filip

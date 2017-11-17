@@ -16,10 +16,7 @@ TagManager:
   - Projectile
   - Particle
   - SurfaceChanger
-<<<<<<< HEAD
-=======
   - Cave
->>>>>>> Filip
   layers:
   - Default
   - TransparentFX
@@ -35,10 +32,7 @@ TagManager:
   - Items
   - Lights
   - Particles
-<<<<<<< HEAD
-=======
   - BossRooms
->>>>>>> Filip
   - 
   - 
   - 
@@ -55,10 +49,6 @@ TagManager:
   - 
   - 
   - 
-<<<<<<< HEAD
-  - 
-=======
->>>>>>> Filip
   - Cave
   m_SortingLayers:
   - name: Default
