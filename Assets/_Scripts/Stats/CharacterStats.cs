@@ -106,10 +106,6 @@ public class CharacterStats : MonoBehaviour
             }
         }
 
-        if (Agent != null)
-        {
-            Agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
-            //Agent.enabled = false;
-        }
+        Agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
     }     
 }

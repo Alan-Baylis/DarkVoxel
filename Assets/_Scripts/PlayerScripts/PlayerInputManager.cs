@@ -329,7 +329,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             distanceToEnemy = Vector3.Distance (transform.position, _lockedOnEnemy.transform.position);
 
-            if (_lockedOnEnemyStats.Dead)
+            if (_lockedOnEnemyStats != null && _lockedOnEnemyStats.Dead)
             {
                 PlayerMovement.LockedOn = false;
                 _playerAC.SetBool ("LockedOn", false);

@@ -6,6 +6,8 @@ public class PlayerManager: MonoBehaviour
 
     public Interactable Focus;
 
+    private GameManager _gameManager;
+
     public float InteractionAngle = 90.0f;
 
     private float _angle;    
@@ -32,6 +34,11 @@ public class PlayerManager: MonoBehaviour
         }
     }
 
+    private void Start ( )
+    {
+        _gameManager = GameManager.instance;
+    }
+
     private void SetFocus(Interactable newFocus)
     {
         if(newFocus != Focus)
@@ -55,7 +62,15 @@ public class PlayerManager: MonoBehaviour
         }
 
         Focus = null;
-    }  
+    }
+
+    private void OnTriggerEnter ( Collider other )
+    {
+        if (other.gameObject.CompareTag ("SurfaceChanger"))
+        {
+            _gameManager.TypeOfSurface = other.gameObject.GetComponent<SurfaceChanger> ().TypeOfSurface;
+        }
+    }
 
     private void OnTriggerStay ( Collider other )
     {
@@ -72,7 +87,7 @@ public class PlayerManager: MonoBehaviour
             {
                 RemoveFocus ();
             }
-        }
+        }       
     }   
 
     private void OnTriggerExit ( Collider other )

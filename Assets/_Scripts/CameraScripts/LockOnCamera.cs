@@ -17,7 +17,7 @@ public class LockOnCamera : MonoBehaviour
     [SerializeField] private float _minimumCameraTilt;
     [SerializeField] private float _maximumCameraTilt;
     
-    private CharacterControllerCamera _characterControllerCamera;   
+    [SerializeField] private CharacterControllerCamera _characterControllerCamera;   
 
     private Vector3 _lastForward;
     private Vector3 _currentForward;
@@ -44,7 +44,7 @@ public class LockOnCamera : MonoBehaviour
         _characterControllerCamera = CharacterControllerCamera.instance;
 
         _cameraLookAngle = _characterControllerCamera._cameraLookAngle;
-        _lastForward = transform.forward;
+        _lastForward = MainCameraPivot.transform.forward;
     }
 
     private void OnEnable ( )
