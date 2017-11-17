@@ -27,6 +27,7 @@ public class CharacterStats : MonoBehaviour
     public Stat Charisma;
 
     public bool CanRegainStamina = true;
+    public bool Dead = false;
 
     public Animator CharacterAC;
 
@@ -87,6 +88,8 @@ public class CharacterStats : MonoBehaviour
 
     private void Die()
     {
+        Dead = true;
+
         if (!CharacterAC.GetBool ("Dead"))
         {
             CharacterAC.SetTrigger ("Die");
