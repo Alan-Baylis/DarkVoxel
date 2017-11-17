@@ -191,8 +191,6 @@ MonoBehaviour:
   _cameraSmoothTime: 5
   _minimumCameraTilt: 20
   _maximumCameraTilt: 30
-  _characterControllerCamera: {fileID: 0}
-  angle: 0
 --- !u!114 &114175903300525008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,7 +206,6 @@ MonoBehaviour:
   _autoTargetPlayer: 0
   _updateType: 1
   UseJoystick: 0
-  Pivot: {fileID: 0}
   PlayerAC: {fileID: 0}
   _cameraMoveSpeed: 10
   _cameraTurnSmoothing: 0

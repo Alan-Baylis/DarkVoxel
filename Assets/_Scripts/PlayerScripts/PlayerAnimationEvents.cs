@@ -13,21 +13,11 @@ public class PlayerAnimationEvents : MonoBehaviour {
 
     private Animator _playerAC;
     private PlayerStats _playerStats;
-    private GameManager _gameManager;
-    private SoundManager _soundManager;
-
-    private int _stepCycle = 0;
 
     private void Awake ( )
     {
         _playerAC = GetComponent<Animator> ();
         _playerStats = GetComponent<PlayerStats> ();
-    }
-
-    private void Start ( )
-    {
-        _gameManager = GameManager.instance;
-        _soundManager = SoundManager.instance;
     }
 
     public void DisableInput( )
@@ -155,47 +145,5 @@ public class PlayerAnimationEvents : MonoBehaviour {
     public void Heal()
     {
         _playerStats.Heal (_playerStats.HealthRecovered);
-    }
-
-    public void PlayFootstepSound()
-    {
-        switch(_gameManager.TypeOfSurface)
-        {
-            case SurfaceType.grass:                
-                _soundManager.GrassFootstep.PlayOneShot (_soundManager.GrasFootsteps [_stepCycle]);                
-                break;
-
-            case SurfaceType.Stone:                
-                _soundManager.StoneFootstep.PlayOneShot (_soundManager.StoneFootsteps[_stepCycle]);
-                break;
-        }
-
-        if (_playerAC.GetBool ("IsRunning"))
-        {
-            if (_stepCycle < 3)
-            {
-                _stepCycle++;
-            }
-            else
-            {
-                _stepCycle = 0;
-            }
-        }
-        else
-        {
-            if(_stepCycle < 1)
-            {
-                _stepCycle++;
-            }
-            else
-            {
-                _stepCycle = 0;
-            }
-        }
-    }
-
-    public void PlaySwingSound()
-    {
-        _soundManager.SwordSwing.Play ();
     }
 }

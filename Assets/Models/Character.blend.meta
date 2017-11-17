@@ -345,14 +345,6 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.669244
-        functionName: PlaySwingSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -423,14 +415,6 @@ ModelImporter:
         messageOptions: 0
       - time: 1
         functionName: ResetAttack
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.5
-        functionName: PlaySwingSound
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
           type: 3}
@@ -749,23 +733,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.018036073
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.502338
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -793,23 +761,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.501002
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.98263186
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -837,23 +789,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.4789579
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.9786239
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -881,23 +817,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.4816299
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.97995996
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1105,23 +1025,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.1503006
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.59986645
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1177,23 +1081,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.4295257
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.93052775
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1277,23 +1165,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.4502338
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.9806279
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1466,22 +1338,6 @@ ModelImporter:
         functionName: ResetAttackCombo
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 114e7070b9d079a44b7f6f70e9dcfd25,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.96841156
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.5216607
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
           type: 3}
         floatParameter: 0
         intParameter: 0
@@ -1933,23 +1789,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.019855596
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.517148
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -2010,22 +1850,6 @@ ModelImporter:
         functionName: ResetAttackCombo
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 114e7070b9d079a44b7f6f70e9dcfd25,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.023465704
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.5685921
-        functionName: PlayFootstepSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
           type: 3}
         floatParameter: 0
         intParameter: 0
@@ -2484,14 +2308,6 @@ ModelImporter:
         messageOptions: 0
       - time: 1
         functionName: ResetHeavyAttack
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.5506873
-        functionName: PlaySwingSound
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
           type: 3}
