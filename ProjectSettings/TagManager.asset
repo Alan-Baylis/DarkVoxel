@@ -15,6 +15,7 @@ TagManager:
   - Shield
   - Projectile
   - Particle
+  - SurfaceChanger
   layers:
   - Default
   - TransparentFX

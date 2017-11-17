@@ -458,8 +458,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1368446761263510}
   m_LocalRotation: {x: -0, y: 0.9995916, z: -0, w: 0.028577417}
-  m_LocalPosition: {x: 78.33, y: 21.088, z: 231.92}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalPosition: {x: 74.25, y: 21.088, z: 231.62}
+  m_LocalScale: {x: 1.250001, y: 1.25, z: 1.250001}
   m_Children:
   - {fileID: 4187838962075840}
   - {fileID: 4446127282435932}
@@ -840,8 +840,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.06361199, y: 0.05776468, z: 0.06945134}
-  m_Center: {x: -0.027885955, y: -0.0002717726, z: 0.009382029}
+  m_Size: {x: 0.21069723, y: 0.057764687, z: 0.06945134}
+  m_Center: {x: -0.10143119, y: -0.00027176735, z: 0.009382029}
 --- !u!65 &65152381423926952
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -984,8 +984,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.06361199, y: 0.05776468, z: 0.06945134}
-  m_Center: {x: -0.027885955, y: -0.0002717726, z: 0.009382029}
+  m_Size: {x: 0.2106972, y: 0.057764683, z: 0.06945134}
+  m_Center: {x: -0.1014312, y: -0.00027177436, z: 0.009381971}
 --- !u!65 &65914020758912526
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1179,7 +1179,7 @@ NavMeshAgent:
   m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 300
-  m_StoppingDistance: 0.6
+  m_StoppingDistance: 0.65
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1

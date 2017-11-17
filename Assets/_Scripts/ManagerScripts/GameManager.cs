@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public enum GameState { Playing, InMenu }
     public GameState StateOfGame;
+        
+    public SurfaceType TypeOfSurface;
 
     public float Gravity = 9.81f;
 
@@ -19,3 +21,5 @@ public class GameManager : MonoBehaviour
         }
     }
 }
+
+public enum SurfaceType { grass, Stone }

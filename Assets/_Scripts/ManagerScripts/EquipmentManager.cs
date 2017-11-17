@@ -138,7 +138,8 @@ public class EquipmentManager : MonoBehaviour
 
             case EquipmentSlot.LeftHand:
                 newMesh.transform.parent = LeftHandTransform;
-                newMesh.transform.position = Vector3.zero;
+                newMesh.transform.localPosition = Vector3.zero;
+                newMesh.transform.localRotation = Quaternion.identity;
                 LeftArmSlotImage.sprite = newEquipment.Icon;
                 LeftArmSlotImage.enabled = true;
                 LeftHandEquipment.sprite = newEquipment.Icon;

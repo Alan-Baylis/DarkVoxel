@@ -638,6 +638,7 @@ GameObject:
   - component: {fileID: 4705368383147740}
   - component: {fileID: 143780964734579594}
   - component: {fileID: 95666015021508392}
+  - component: {fileID: 195825053514433460}
   - component: {fileID: 114452333423087768}
   - component: {fileID: 114130612711639610}
   - component: {fileID: 114320890579443530}
@@ -2080,6 +2081,7 @@ MonoBehaviour:
   ChaseRange: 15
   BackAwayAndBlockRange: 20
   GoToStartRange: 25
+  heading: {x: 0, y: 0, z: 0}
 --- !u!114 &114320890579443530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2112,6 +2114,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee47c87fb2601a54cb1d8b4009c67af6, type: 2}
   - {fileID: 11400000, guid: 9dd9cdc86dbb2224e99d42d893d71c4c, type: 2}
   TargetMesh: {fileID: 137395934965974204}
+  LeftHandEquipment: {fileID: 4951774318655678}
+  RightHandEquipment: {fileID: 4779008637472136}
 --- !u!137 &137395934965974204
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2207,3 +2211,24 @@ CharacterController:
   m_SkinWidth: 0.04
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.97, z: 0}
+--- !u!195 &195825053514433460
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1535879773371750}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

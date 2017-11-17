@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1413061923060648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024af2a7b0234db478a904dc4b38525c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyTransform: {fileID: 0}
   IsFlying: 0
   Speed: 10
   Damage: 5

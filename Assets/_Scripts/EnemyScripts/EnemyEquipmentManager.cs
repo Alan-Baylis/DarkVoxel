@@ -8,6 +8,9 @@ public class EnemyEquipmentManager : MonoBehaviour
 
     public SkinnedMeshRenderer TargetMesh;
 
+    public Transform LeftHandEquipment;
+    public Transform RightHandEquipment;
+
     private void Start ( )
     {
         for (int i = 0; i < EnemyEquipment.Count; i++)
@@ -15,8 +18,44 @@ public class EnemyEquipmentManager : MonoBehaviour
             Equipment equipment = EnemyEquipment [i];
             SkinnedMeshRenderer newMesh = Instantiate (equipment.Mesh);
 
-            newMesh.transform.parent = TargetMesh.transform;
-            newMesh.transform.position = Vector3.zero;
+            switch(equipment.EquipSlot)
+            {
+                case EquipmentSlot.LeftHand:
+                    newMesh.transform.parent = LeftHandEquipment;
+                    newMesh.transform.localPosition = Vector3.zero;
+                    newMesh.transform.localRotation = Quaternion.identity;
+                    break;
+
+                case EquipmentSlot.RightHand:
+                    newMesh.transform.parent = RightHandEquipment;
+                    newMesh.transform.localPosition = Vector3.zero;
+                    newMesh.transform.localRotation = Quaternion.identity;
+                    break;
+
+                case EquipmentSlot.Chest:
+                    newMesh.transform.parent = TargetMesh.transform;
+                    newMesh.transform.localPosition = Vector3.zero;
+                    newMesh.transform.localRotation = Quaternion.identity;
+                    break;
+
+                case EquipmentSlot.Feet:
+                    newMesh.transform.parent = TargetMesh.transform;
+                    newMesh.transform.localPosition = Vector3.zero;
+                    newMesh.transform.localRotation = Quaternion.identity;
+                    break;
+
+                case EquipmentSlot.Head:
+                    newMesh.transform.parent = TargetMesh.transform;
+                    newMesh.transform.localPosition = Vector3.zero;
+                    newMesh.transform.localRotation = Quaternion.identity;
+                    break;
+
+                case EquipmentSlot.Legs:
+                    newMesh.transform.parent = TargetMesh.transform;
+                    newMesh.transform.localPosition = Vector3.zero;
+                    newMesh.transform.localRotation = Quaternion.identity;
+                    break;
+            }           
 
             newMesh.bones = TargetMesh.bones;
             newMesh.rootBone = TargetMesh.rootBone;
