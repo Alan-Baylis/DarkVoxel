@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4828040496136628}
   - component: {fileID: 205863396421158142}
+  - component: {fileID: 65642773043973458}
   m_Layer: 0
   m_Name: Fixed Dark Tree
   m_TagString: Untagged
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1483431389348660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 479.9665, y: 5.46, z: -179.1275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4335525897310446}
@@ -112,6 +113,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388044467013414}
   m_Mesh: {fileID: 4300000, guid: 510a1157989fa93489faee4d2733639c, type: 3}
+--- !u!65 &65642773043973458
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1483431389348660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1346741, y: 7.4703484, z: 1.2985535}
+  m_Center: {x: 0.037643433, y: 3.2351742, z: 0.055145264}
 --- !u!95 &95247337370646088
 Animator:
   serializedVersion: 3
