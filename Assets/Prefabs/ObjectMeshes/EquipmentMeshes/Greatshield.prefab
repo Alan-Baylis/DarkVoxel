@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4732799980913674}
   - component: {fileID: 65715087130762520}
+  - component: {fileID: 208029682625344228}
   m_Layer: 0
   m_Name: BlockCollider
-  m_TagString: Player
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +39,7 @@ GameObject:
   - component: {fileID: 137824883677128512}
   m_Layer: 0
   m_Name: Greatshield
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,8 +81,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16433401, y: 1.3972237, z: 0.5624434}
-  m_Center: {x: 0.11517326, y: -0.55730665, z: 0.01890191}
+  m_Size: {x: 0.21058236, y: 1.3972236, z: 0.5624434}
+  m_Center: {x: 0.13829762, y: -0.5573069, z: 0.018901948}
 --- !u!137 &137824883677128512
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -160,3 +161,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -1.4085398, y: -0.3331415, z: 0.022663534}
     m_Extent: {x: 0.7144377, y: 0.19946022, z: 0.72024554}
   m_DirtyAABB: 0
+--- !u!208 &208029682625344228
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264020779974824}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.1052912, y: 0.698612, z: 0.2812217}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.1382976, y: -0.5573069, z: 0.01890195}
+  m_TimeToStationary: 0.5

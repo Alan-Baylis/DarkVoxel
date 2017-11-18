@@ -249,7 +249,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.05409357
+        functionName: EmitFallParticles
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: aa46e55d6f8a85540bc54f7ab23c075d,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

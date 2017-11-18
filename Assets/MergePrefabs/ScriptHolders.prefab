@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4861815140131312}
   - component: {fileID: 114496418285359504}
   - component: {fileID: 114561074030324968}
+  - component: {fileID: 114076100443342116}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -132,6 +133,30 @@ Transform:
   m_Father: {fileID: 4033818755432948}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114076100443342116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1825378149176748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589b87c829f02684c804f67141683e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrassFootstep: {fileID: 0}
+  StoneFootstep: {fileID: 0}
+  GrasFootsteps:
+  - {fileID: 8300000, guid: 9544cf4383fb9ce4aa04f3e80ef19c6c, type: 3}
+  - {fileID: 8300000, guid: 3bcba83e315fd684e8bf1a61a9dd35d9, type: 3}
+  - {fileID: 8300000, guid: 155384e60c79e404aa2a774262422fa6, type: 3}
+  - {fileID: 8300000, guid: 13266f31f9289d040959506571f93d1e, type: 3}
+  StoneFootsteps:
+  - {fileID: 8300000, guid: 8b5387ed16470fc4c845d2650a816e7b, type: 3}
+  - {fileID: 8300000, guid: fabbdb00ae0b0d644a4640cd04e7e0b0, type: 3}
+  - {fileID: 8300000, guid: f84d3288259bcf3438f878ba2eb57529, type: 3}
+  - {fileID: 8300000, guid: 71c9bd52146b6f640b19328527458aab, type: 3}
+  SwordSwing: {fileID: 0}
 --- !u!114 &114259997144297742
 MonoBehaviour:
   m_ObjectHideFlags: 1

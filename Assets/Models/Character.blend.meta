@@ -228,6 +228,7 @@ ModelImporter:
     7400142: Stagger_1
     7400144: Knockback
     7400146: Knockback_Stand_Up
+    7400148: Sit_DowAt_Checkpoint__End
     9500000: //RootNode
     13700000: Character
     13700002: Crossbow
@@ -1582,7 +1583,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.59836227
+      - time: 0.5998253
         functionName: EnableInput
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -1590,7 +1591,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.97072786
+      - time: 0.92013264
         functionName: EnableStaminaGain
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -1658,7 +1659,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7802549
+      - time: 0.44960383
         functionName: StopRolling
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -1666,7 +1667,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9399185
+      - time: 0.59975755
         functionName: EnableInput
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -1674,7 +1675,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 1
+      - time: 0.92113096
         functionName: EnableStaminaGain
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -1742,7 +1743,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.77868086
+      - time: 0.4502244
         functionName: StopRolling
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -1750,7 +1751,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.94135725
+      - time: 0.59973323
         functionName: EnableInput
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -1758,7 +1759,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 1
+      - time: 0.92113096
         functionName: EnableStaminaGain
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -1826,7 +1827,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7811488
+      - time: 0.44903466
         functionName: StopRolling
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -1834,7 +1835,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.94093686
+      - time: 0.60004437
         functionName: EnableInput
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -1842,7 +1843,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 1
+      - time: 0.9203869
         functionName: EnableStaminaGain
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -2795,6 +2796,34 @@ ModelImporter:
       takeName: Knockback_Stand_Up
       firstFrame: -1
       lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sit_DowAt_Checkpoint__End
+      takeName: Sit_DowAt_Checkpoint__End
+      firstFrame: -1
+      lastFrame: 93
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

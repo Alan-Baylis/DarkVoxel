@@ -61,7 +61,7 @@ namespace CameraControl
             // loop through all the collisions to check if something we care about
             for (int i = 0; i < cols.Length; i++)
             {
-                if ((!cols[i].isTrigger && !cols[i].gameObject.CompareTag(dontClipTag)))
+                if ((!cols[i].isTrigger && !cols[i].transform.root.gameObject.CompareTag(dontClipTag)))
                 {
                     initialIntersect = true;
                     break;
@@ -92,7 +92,7 @@ namespace CameraControl
             for (int i = 0; i < _hits.Length; i++)
             {
                 // only deal with the collision if it was closer than the previous one, not a trigger, and not attached to a gameObject tagged with the dontClipTag
-                if (_hits[i].distance < nearest && (!_hits[i].collider.isTrigger && !_hits[i].collider.gameObject.CompareTag(dontClipTag)))
+                if (_hits[i].distance < nearest && (!_hits[i].collider.isTrigger && !_hits[i].collider.transform.root.gameObject.CompareTag(dontClipTag)))
                 {
                     // change the nearest collision to latest
                     nearest = _hits[i].distance;
