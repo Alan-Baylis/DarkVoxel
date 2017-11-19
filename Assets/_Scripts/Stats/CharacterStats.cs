@@ -54,7 +54,7 @@ public class CharacterStats : MonoBehaviour
         CurrentHealth -= amount;        
         Debug.Log (transform.name + " takes " + amount + " damage.");
 
-        CharacterAC.SetTrigger ("Stagger");
+        CharacterAC.SetTrigger ("Hit");
         HitSound.Play ();
 
         if(CurrentHealth <= 0)

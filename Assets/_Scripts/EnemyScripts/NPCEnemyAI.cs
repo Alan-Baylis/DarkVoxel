@@ -127,7 +127,7 @@ public class NPCEnemyAI : MonoBehaviour
                 else
                 {
                     if (CanAttack && !_enemyNPCAC.GetBool("IsAttacking"))
-                    {
+                    {                        
                         _enemyNPCAC.applyRootMotion = false;
                         _enemyNPCAC.SetTrigger ("Attack");
                         _enemyNPCAC.SetBool ("IsBlocking", false);

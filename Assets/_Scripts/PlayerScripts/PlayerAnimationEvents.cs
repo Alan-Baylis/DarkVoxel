@@ -208,5 +208,5 @@ public class PlayerAnimationEvents : MonoBehaviour
     public void PlaySwingSound ( )
     {
         _soundManager.SwordSwing.Play ();
-    }
+    }    
 }

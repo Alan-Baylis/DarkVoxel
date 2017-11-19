@@ -141,4 +141,9 @@ public class FayEnemyNPCAnimationEvents : MonoBehaviour
     {
         SwordSwing.Play ();
     }
+
+    public void ResetAttackTrigger ( )
+    {
+        _fayEnemyNPCAC.ResetTrigger ("Attack");
+    }
 }
