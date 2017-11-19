@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerInputManager : MonoBehaviour
 {
-	public static float Horizontal;
+    public static float Horizontal;
     public static float Vertical;
-    public static float MoveMagnitude;    
+    public static float MoveMagnitude;
 
     public static Vector3 MoveDirection;
 
@@ -27,7 +27,7 @@ public class PlayerInputManager : MonoBehaviour
     private PlayerStats _playerStats;
 
     private Collider [] _colliders;
-    private List<GameObject> _visibleEnemies = new List<GameObject>();
+    private List<GameObject> _visibleEnemies = new List<GameObject> ();
 
     [SerializeField] private float _runTimer = 0.75f;                       //time in sec that dictates how long the player needs to hold run button before running, or how fast must he release the button fo rolling
     private float _currentTimer;
@@ -39,7 +39,7 @@ public class PlayerInputManager : MonoBehaviour
     private bool _isResting = false;                                        //Disables running emidiately after stamina is regained if the run button is stil pressed down  
     private bool _attacking = false;
 
-    private int _numberOfPreviousColliders;    
+    private int _numberOfPreviousColliders;
 
     private Vector3 _directionToEnemy;
 
@@ -49,7 +49,7 @@ public class PlayerInputManager : MonoBehaviour
 
     private int _layerMask = 1 << 9;
 
-    
+
 
     private void Start ( )
     {
@@ -60,7 +60,7 @@ public class PlayerInputManager : MonoBehaviour
         _playerAC = GetComponent<Animator> ();
         _gameManager = GameManager.instance;
         _playerStats = PlayerStats.instance;
-        _currentTimer = _runTimer;        
+        _currentTimer = _runTimer;
     }
 
     private void Update ( )
@@ -76,12 +76,12 @@ public class PlayerInputManager : MonoBehaviour
             Attack ();
             HeavyAttack ();
             Block ();
-        }       
+        }
 
         AccesMenu ();
     }
 
-    private void MoveInput( )
+    private void MoveInput ( )
     {
         if (_playerAC.GetBool ("InputEnabled"))
         {
@@ -97,7 +97,7 @@ public class PlayerInputManager : MonoBehaviour
             MoveMagnitude = 1.0f;
         }
 
-        if(Horizontal != 0.0f || Vertical != 0.0f)
+        if (Horizontal != 0.0f || Vertical != 0.0f)
         {
             _playerAC.SetBool ("IsMoving", true);
         }
@@ -105,11 +105,11 @@ public class PlayerInputManager : MonoBehaviour
         {
             _playerAC.SetBool ("IsMoving", false);
         }
-    }  
+    }
 
     private void LockOn ( )
     {
-        lowestAngle = -1;        
+        lowestAngle = -1;
         angle = 0;
 
         if (_colliders != null)
@@ -149,7 +149,7 @@ public class PlayerInputManager : MonoBehaviour
                 }
                 else
                 {
-                    if(enemyController.OnList)
+                    if (enemyController.OnList)
                     {
                         _visibleEnemies.Remove (collider.transform.root.gameObject);
                         enemyController.OnList = false;
@@ -159,9 +159,9 @@ public class PlayerInputManager : MonoBehaviour
         }
 
         #region LockOn
-        if (Input.GetButtonDown("LockOn") && _lockedOnEnemy == null)
+        if (Input.GetButtonDown ("LockOn") && _lockedOnEnemy == null)
         {
-            if(_visibleEnemies.Count != 0)
+            if (_visibleEnemies.Count != 0)
             {
                 foreach (GameObject enemy in _visibleEnemies)
                 {
@@ -174,11 +174,11 @@ public class PlayerInputManager : MonoBehaviour
 
                         Debug.DrawRay (Camera.main.transform.position, _directionToEnemy);
 
-                        if (Physics.Raycast(Camera.main.transform.position, _directionToEnemy, out hit, _playerManager.SetupFields.LockOnRadius))
+                        if (Physics.Raycast (Camera.main.transform.position, _directionToEnemy, out hit, _playerManager.SetupFields.LockOnRadius))
                         {
                             if (hit.collider.transform.root.gameObject == enemy)
                             {
-                                _lockOnCamera.LockOnTarget = enemy.transform;                               
+                                _lockOnCamera.LockOnTarget = enemy.transform;
                                 _lockedOnEnemy = enemy;
 
                                 _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = true;
@@ -200,7 +200,7 @@ public class PlayerInputManager : MonoBehaviour
         #endregion
 
         #region ChangeLockOnTarget
-        else if(Input.GetAxis("HorizontalCameraMove") >= 0.9f && !_targetChanged && _lockedOnEnemy != null)
+        else if (Input.GetAxis ("HorizontalCameraMove") >= 0.9f && !_targetChanged && _lockedOnEnemy != null)
         {
             float smallestDirectionAngle = -1;
 
@@ -208,7 +208,7 @@ public class PlayerInputManager : MonoBehaviour
             {
                 EnemyController enemyController = enemy.GetComponent<EnemyController> ();
 
-                if(!enemyController.LockedOn)
+                if (!enemyController.LockedOn)
                 {
                     _directionToEnemy = ((enemy.transform.position + enemy.transform.up) - Camera.main.transform.position);
 
@@ -225,7 +225,7 @@ public class PlayerInputManager : MonoBehaviour
                             {
                                 if (hit.collider.transform.root.gameObject == enemy)
                                 {
-                                    _lockOnCamera.LockOnTarget = enemy.transform;                                    
+                                    _lockOnCamera.LockOnTarget = enemy.transform;
                                     _lockedOnEnemy = enemy;
 
                                     _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = true;
@@ -247,7 +247,7 @@ public class PlayerInputManager : MonoBehaviour
                 }
             }
         }
-        else if(Input.GetAxis("HorizontalCameraMove") <= -0.9f && !_targetChanged && _lockedOnEnemy != null)
+        else if (Input.GetAxis ("HorizontalCameraMove") <= -0.9f && !_targetChanged && _lockedOnEnemy != null)
         {
             float smallestDirectionAngle = -1;
 
@@ -272,7 +272,7 @@ public class PlayerInputManager : MonoBehaviour
                             {
                                 if (hit.collider.transform.root.gameObject == enemy)
                                 {
-                                    _lockOnCamera.LockOnTarget = enemy.transform;                                    
+                                    _lockOnCamera.LockOnTarget = enemy.transform;
                                     _lockedOnEnemy = enemy;
 
                                     _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = true;
@@ -294,21 +294,21 @@ public class PlayerInputManager : MonoBehaviour
                 }
             }
         }
-        else if(Input.GetAxis("HorizontalCameraMove") > -0.9f && Input.GetAxis("HorizontalCameraMove") < 0.9f)
+        else if (Input.GetAxis ("HorizontalCameraMove") > -0.9f && Input.GetAxis ("HorizontalCameraMove") < 0.9f)
         {
             _targetChanged = false;
         }
         #endregion
 
         #region CancleLockOn
-        if(Input.GetButtonDown("LockOn") && _lockedOnEnemy != null)
+        if (Input.GetButtonDown ("LockOn") && _lockedOnEnemy != null)
         {
             if (lowestAngle == -1)
             {
                 PlayerMovement.LockedOn = false;
                 _playerAC.SetBool ("LockedOn", false);
-                lowestAngle = -1f;                
-                _characterControllerCamera.enabled = true;               
+                lowestAngle = -1f;
+                _characterControllerCamera.enabled = true;
 
                 EnemyController enemyController = _lockedOnEnemy.GetComponent<EnemyController> ();
                 enemyController.LockedOn = false;
@@ -323,7 +323,7 @@ public class PlayerInputManager : MonoBehaviour
                 _lockOnCamera.LockOnTarget = null;
                 _lockedOnEnemy = null;
             }
-        }        
+        }
 
         if (_lockedOnEnemy != null)
         {
@@ -335,22 +335,22 @@ public class PlayerInputManager : MonoBehaviour
                 _playerAC.SetBool ("LockedOn", false);
                 lowestAngle = -1f;
                 distanceToEnemy = 0;
-                _lockOnCamera.enabled = false;              
-                _characterControllerCamera.enabled = true;                
+                _lockOnCamera.enabled = false;
+                _characterControllerCamera.enabled = true;
                 _lockOnCamera.LockOnTarget = null;
                 _lockedOnEnemy.GetComponent<EnemyController> ().LockedOn = false;
                 _lockedOnEnemy.GetComponent<EnemyController> ().OnList = false;
                 _visibleEnemies.Remove (_lockedOnEnemy);
                 _lockedOnEnemy = null;
-            }            
+            }
 
-            if(distanceToEnemy > _playerManager.SetupFields.LockOnRadius)
+            if (distanceToEnemy > _playerManager.SetupFields.LockOnRadius)
             {
                 PlayerMovement.LockedOn = false;
                 _playerAC.SetBool ("LockedOn", false);
                 lowestAngle = -1f;
                 distanceToEnemy = 0;
-                _lockOnCamera.enabled = false;                
+                _lockOnCamera.enabled = false;
                 _characterControllerCamera.enabled = true;
                 _characterControllerCamera._cameraLookAngle = Camera.main.transform.localRotation.y;
                 _lockOnCamera.LockOnTarget = null;
@@ -378,9 +378,9 @@ public class PlayerInputManager : MonoBehaviour
         if (Input.GetButtonUp ("Roll"))
         {
             StopCoroutine (Countdown ());
-            if (_currentTimer > 0.0f && _playerAC.GetBool ("RollEnabled") && _playerAC.GetBool("IsMoving") && _playerStats.CurrentStamina > 0.0f)
+            if (_currentTimer > 0.0f && _playerAC.GetBool ("RollEnabled") && _playerAC.GetBool ("IsMoving") && _playerStats.CurrentStamina > 0.0f)
             {
-                _playerAC.SetTrigger ("Rolling");               
+                _playerAC.SetTrigger ("Rolling");
 
                 _playerStats.CanRegainStamina = false;
 
@@ -398,7 +398,7 @@ public class PlayerInputManager : MonoBehaviour
         if (Input.GetButton ("Run"))
         {
             StartCoroutine (Countdown ());
-            if (_currentTimer <= 0.0f && _playerAC.GetBool("IsMoving") && !_playerAC.GetBool("IsBlocking"))
+            if (_currentTimer <= 0.0f && _playerAC.GetBool ("IsMoving") && !_playerAC.GetBool ("IsBlocking"))
             {
                 if (_playerStats.CurrentStamina > 0.0f && !_isResting)
                 {
@@ -424,7 +424,7 @@ public class PlayerInputManager : MonoBehaviour
             _currentTimer = _runTimer;
         }
 
-        if(_playerAC.GetBool("IsRunning"))
+        if (_playerAC.GetBool ("IsRunning"))
         {
             //Use stamina
             _playerStats.UseStamina (_playerStats.RunStaminaUsage);
@@ -438,9 +438,9 @@ public class PlayerInputManager : MonoBehaviour
 
     //System needs to be redone for better performance!!
     //This is just for testing
-    private void Attack( )
+    private void Attack ( )
     {
-        if(Input.GetButtonDown("Attack") && _gameManager.StateOfGame != GameManager.GameState.InMenu && !_playerAC.GetBool("AttackQeued"))
+        if (Input.GetButtonDown ("Attack") && _gameManager.StateOfGame != GameManager.GameState.InMenu && !_playerAC.GetBool ("AttackQeued"))
         {
             if (_playerStats.CurrentStamina > 0)
             {
@@ -453,7 +453,7 @@ public class PlayerInputManager : MonoBehaviour
                     }
                     else
                     {
-                        _playerAC.SetTrigger ("Attack");                        
+                        _playerAC.SetTrigger ("Attack");
                     }
                 }
                 else
@@ -466,12 +466,12 @@ public class PlayerInputManager : MonoBehaviour
                     {
                         _playerAC.SetTrigger ("Attack");
 
-                        if(_playerAC.GetBool("Attacking") || _playerAC.GetBool("HeavyAttacking"))
+                        if (_playerAC.GetBool ("Attacking") || _playerAC.GetBool ("HeavyAttacking"))
                         {
                             _playerAC.SetBool ("AttackQeued", true);
                         }
                     }
-                }                
+                }
             }
         }
     }
@@ -481,9 +481,9 @@ public class PlayerInputManager : MonoBehaviour
         if (!_attacking)
         {
 
-            if ((Input.GetButtonDown ("HeavyAttack") || Input.GetAxis("HeavyAttack") >= 0.5f) && _gameManager.StateOfGame != GameManager.GameState.InMenu && !_playerAC.GetBool ("AttackQeued"))
+            if ((Input.GetButtonDown ("HeavyAttack") || Input.GetAxis ("HeavyAttack") >= 0.5f) && _gameManager.StateOfGame != GameManager.GameState.InMenu && !_playerAC.GetBool ("AttackQeued"))
             {
-            
+
                 if (_playerStats.CurrentStamina > 0)
                 {
                     _attacking = true;
@@ -493,57 +493,57 @@ public class PlayerInputManager : MonoBehaviour
                     {
                         _playerAC.SetBool ("AttackQeued", true);
                     }
-                }                
+                }
             }
         }
         else
         {
-            if(Input.GetAxis("HeavyAttack") < 0.1f)
+            if (Input.GetAxis ("HeavyAttack") < 0.1f)
             {
                 _attacking = false;
             }
         }
-       
+
     }
 
     private void Block ( )
     {
-        if(Input.GetButton("Block") && _playerAC.GetBool("ShieldEquipped"))
+        if (Input.GetButton ("Block") && _playerAC.GetBool ("ShieldEquipped") && !_playerAC.GetBool ("Healing"))
         {
             _playerAC.SetBool ("IsBlocking", true);
         }
         else
         {
-            _playerAC.SetBool("IsBlocking", false);
+            _playerAC.SetBool ("IsBlocking", false);
         }
     }
 
-    private void AccesMenu()
+    private void AccesMenu ( )
     {
-        if(Input.GetButtonDown("Menu"))
+        if (Input.GetButtonDown ("Menu"))
         {
             if (Menu.activeSelf)
             {
                 Menu.SetActive (false);
-                EquipmentHUD.SetActive (true);                
+                EquipmentHUD.SetActive (true);
                 _gameManager.StateOfGame = GameManager.GameState.Playing;
                 StartCoroutine (SetInventoryCameraPosition ());
             }
             else
             {
                 Menu.SetActive (true);
-                EquipmentHUD.SetActive (false);                
+                EquipmentHUD.SetActive (false);
                 StartCoroutine (SetInventoryCameraPosition ());
                 Menu.GetComponentInChildren<Button> ().Select ();
                 _gameManager.StateOfGame = GameManager.GameState.InMenu;
-                
+
             }
         }
     }
 
-    private void Heal(int amount)
+    private void Heal ( int amount )
     {
-        if(Input.GetButtonDown("Heal") && _playerStats.CurrentNumberOfRecoveries > 0)
+        if (Input.GetButtonDown ("Heal") && _playerStats.CurrentNumberOfRecoveries > 0)
         {
             _playerAC.SetTrigger ("Heal");
         }
@@ -567,7 +567,7 @@ public class PlayerInputManager : MonoBehaviour
                 MainCameraRigPivot.transform.localPosition = Vector3.Lerp (MainCameraRigPivot.transform.localPosition, new Vector3 (0.0f, 0.0f, 0.0f), 1f);
                 time -= Time.deltaTime;
             }
-        }        
+        }
     }
 
     IEnumerator Countdown ( )
@@ -578,5 +578,5 @@ public class PlayerInputManager : MonoBehaviour
         }
 
         yield return 0;
-    }   
+    }
 }

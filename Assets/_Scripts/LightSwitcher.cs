@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class LightSwitcher : MonoBehaviour
 {
-    public GameObject LightToSwitch;
+    public List<GameObject> LightsToSwitch;
 
     private void OnTriggerEnter ( Collider other )
     {
         if(other.transform.root.CompareTag("Player"))
         {
-            LightToSwitch.SetActive (!LightToSwitch.activeSelf);
+            for (int i = 0; i < LightsToSwitch.Count; i++)
+            {
+                LightsToSwitch[i].SetActive (!LightsToSwitch[i].activeSelf);
+            }           
         }
     }
 }

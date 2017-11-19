@@ -266,7 +266,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -675,7 +675,7 @@ ModelImporter:
       name: Block
       takeName: Block
       firstFrame: -1
-      lastFrame: 0
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -722,7 +722,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.82931864
+        functionName: EnableStaminaGain
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -1551,8 +1559,8 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.03125
-        functionName: DisableInput
+      - time: 0
+        functionName: StartRolling
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
           type: 3}
@@ -1560,7 +1568,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.03125
-        functionName: StartRolling
+        functionName: DisableInput
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
           type: 3}
@@ -1635,8 +1643,8 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.03125
-        functionName: DisableInput
+      - time: 0
+        functionName: StartRolling
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
           type: 3}
@@ -1644,7 +1652,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.03125
-        functionName: StartRolling
+        functionName: DisableInput
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
           type: 3}
@@ -1719,8 +1727,8 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.03125
-        functionName: DisableInput
+      - time: 0
+        functionName: StartRolling
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
           type: 3}
@@ -1728,7 +1736,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.03125
-        functionName: StartRolling
+        functionName: DisableInput
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
           type: 3}
@@ -1803,7 +1811,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.03125
+      - time: 0
         functionName: StartRolling
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
@@ -2678,7 +2686,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: DisableDamage
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -2731,6 +2747,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.92060715
+        functionName: StopHealing
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -2758,7 +2782,63 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: DisableDamage
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.08239095
+        functionName: EnableRolling
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.08239095
+        functionName: StopRolling
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.33037156
+        functionName: EnableInput
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.42284894
+        functionName: ResetAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.42284894
+        functionName: ResetHeavyAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.83138335
+        functionName: ResetAttack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 7ac30b11512712f49834113fd73e4001,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

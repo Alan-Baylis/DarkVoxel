@@ -26,12 +26,16 @@ public class CharacterStats : MonoBehaviour
     public Stat Wisdom;
     public Stat Charisma;
 
+    public AudioSource HitSound;
+    public AudioSource ShieldHitSound;
+
     public bool CanRegainStamina = true;
     public bool DisableScriptsOnDeath = true;
     public bool Dead = false;
 
     public Animator CharacterAC;
 
+    public CharacterController EnemyCharacterController;
     public NavMeshAgent Agent;
     public Rigidbody RB;
 
@@ -50,6 +54,9 @@ public class CharacterStats : MonoBehaviour
         CurrentHealth -= amount;        
         Debug.Log (transform.name + " takes " + amount + " damage.");
 
+        CharacterAC.SetTrigger ("Stagger");
+        HitSound.Play ();
+
         if(CurrentHealth <= 0)
         {
             Die ();
@@ -65,6 +72,7 @@ public class CharacterStats : MonoBehaviour
     public void TakeDamageWithStamina(float amount)
     {
         CurrentStamina -= amount;
+        ShieldHitSound.Play ();
     }
 
     public void UseStamina(float amount)
@@ -105,7 +113,13 @@ public class CharacterStats : MonoBehaviour
                 script.enabled = false;
             }
         }
-
-        Agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+        if (Agent != null)
+        {
+            Agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+        }
+        if(EnemyCharacterController != null)
+        {
+            EnemyCharacterController.enabled = false;
+        }
     }     
 }

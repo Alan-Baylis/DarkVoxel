@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 33853693730121166}
   - component: {fileID: 23628768345461846}
   - component: {fileID: 95586627483144216}
+  - component: {fileID: 64879882958126244}
   m_Layer: 0
   m_Name: Rock 2 prefab
   m_TagString: Untagged
@@ -2218,6 +2219,7 @@ GameObject:
   - component: {fileID: 33970393107719894}
   - component: {fileID: 23253474770737888}
   - component: {fileID: 95688255120758872}
+  - component: {fileID: 64520379364190076}
   m_Layer: 0
   m_Name: Rock 1 prefab
   m_TagString: Untagged
@@ -2283,6 +2285,7 @@ GameObject:
   - component: {fileID: 33248247961359712}
   - component: {fileID: 23407321921109894}
   - component: {fileID: 95679502928164452}
+  - component: {fileID: 64979497685180158}
   m_Layer: 0
   m_Name: Rock 1
   m_TagString: Untagged
@@ -5293,7 +5296,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484645059359286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 371.9, y: 4.95, z: -311.2}
+  m_LocalPosition: {x: 371.9, y: 5, z: -311.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4209891638461532}
@@ -10263,6 +10266,20 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ca98b6f171c799346b6a92575c3b3949, type: 3}
+--- !u!64 &64520379364190076
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517752357957882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: ca98b6f171c799346b6a92575c3b3949, type: 3}
 --- !u!64 &64521738468102982
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -10417,12 +10434,40 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 72868dc3179905746a4d3cdb597bfdd5, type: 3}
+--- !u!64 &64879882958126244
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061501786047832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 72868dc3179905746a4d3cdb597bfdd5, type: 3}
 --- !u!64 &64963618955501814
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943527145137438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: ca98b6f171c799346b6a92575c3b3949, type: 3}
+--- !u!64 &64979497685180158
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1537282426805844}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

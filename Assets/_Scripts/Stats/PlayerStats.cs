@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStats : CharacterStats
-{    
+{
     public static PlayerStats instance;
 
     [Tooltip ("Amount of stamina per second used while running")]
@@ -30,11 +30,11 @@ public class PlayerStats : CharacterStats
 
     private void Awake ( )
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
-    }      
+    }
 
     private void Start ( )
     {
@@ -49,7 +49,7 @@ public class PlayerStats : CharacterStats
 
     private void Update ( )
     {
-        if(HealthBar.fillAmount != CurrentHealth / MaxHealth || StaminaBar.fillAmount != CurrentStamina / MaxStamina)
+        if (HealthBar.fillAmount != CurrentHealth / MaxHealth || StaminaBar.fillAmount != CurrentStamina / MaxStamina)
         {
             UpdateUI ();
         }
@@ -58,20 +58,20 @@ public class PlayerStats : CharacterStats
     private void OnEquipmentChanged ( Equipment newItem, Equipment oldItem )
     {
         if (newItem != null)
-        {            
-            if(newItem.ScalingStat.Count != 0)
+        {
+            if (newItem.ScalingStat.Count != 0)
             {
                 for (int i = 0; i < newItem.ScalingStat.Count; i++)
                 {
-                    switch(newItem.ScalingStat[i])
+                    switch (newItem.ScalingStat [i])
                     {
                         case ScalingStatType.Dexterity:
-                            Damage.AddModifier (newItem.BaseDamage + (newItem.ScalePercent[i] * Dexterity.GetValue() / 100));
+                            Damage.AddModifier (newItem.BaseDamage + (newItem.ScalePercent [i] * Dexterity.GetValue () / 100));
                             HeavyDamage.AddModifier (Mathf.RoundToInt ((newItem.BaseDamage + (newItem.ScalePercent [i] * Dexterity.GetValue () / 100)) * newItem.HeavyAttackDamageModifier));
                             break;
 
                         case ScalingStatType.Inteligence:
-                            Damage.AddModifier (newItem.BaseDamage + (newItem.ScalePercent [i] * Inteligence.GetValue () / 100 ));
+                            Damage.AddModifier (newItem.BaseDamage + (newItem.ScalePercent [i] * Inteligence.GetValue () / 100));
                             HeavyDamage.AddModifier (Mathf.RoundToInt ((newItem.BaseDamage + (newItem.ScalePercent [i] * Inteligence.GetValue () / 100)) * newItem.HeavyAttackDamageModifier));
                             break;
 
@@ -87,7 +87,7 @@ public class PlayerStats : CharacterStats
                     }
                 }
             }
-            
+
         }
 
         if (oldItem != null)
@@ -115,7 +115,7 @@ public class PlayerStats : CharacterStats
 
                         case ScalingStatType.Wisdom:
                             Damage.RemoveModifier (oldItem.BaseDamage + (oldItem.ScalePercent [i] * Wisdom.GetValue () / 100));
-                            HeavyDamage.RemoveModifier (Mathf.RoundToInt((oldItem.BaseDamage + (oldItem.ScalePercent [i] * Wisdom.GetValue () / 100)) * oldItem.HeavyAttackDamageModifier));
+                            HeavyDamage.RemoveModifier (Mathf.RoundToInt ((oldItem.BaseDamage + (oldItem.ScalePercent [i] * Wisdom.GetValue () / 100)) * oldItem.HeavyAttackDamageModifier));
                             break;
                     }
                 }
@@ -129,31 +129,31 @@ public class PlayerStats : CharacterStats
         {
             HealthBar.fillAmount = CurrentHealth / MaxHealth;
         }
-        else if(HealthBar.fillAmount < CurrentHealth / MaxHealth)
+        else if (HealthBar.fillAmount < CurrentHealth / MaxHealth)
         {
             HealthBarOverTime.fillAmount = CurrentHealth / MaxHealth;
         }
 
         StaminaBar.fillAmount = CurrentStamina / MaxStamina;
 
-        if(HealthBar.fillAmount > HealthBarOverTime.fillAmount)
+        if (HealthBar.fillAmount > HealthBarOverTime.fillAmount)
         {
             HealthBarOverTime.fillAmount = HealthBar.fillAmount;
-        }        
+        }
 
-        if(StaminaBar.fillAmount > StaminaBarOverTime.fillAmount)
+        if (StaminaBar.fillAmount > StaminaBarOverTime.fillAmount)
         {
             StaminaBarOverTime.fillAmount = StaminaBar.fillAmount;
         }
 
         StartCoroutine (UpdateUIOverTime ());
-    } 
+    }
 
-    private IEnumerator UpdateUIOverTime()
+    private IEnumerator UpdateUIOverTime ( )
     {
-        while(HealthBarOverTime.fillAmount > CurrentHealth / MaxHealth)
+        while (HealthBarOverTime.fillAmount > CurrentHealth / MaxHealth)
         {
-            if(HealthBar.fillAmount < HealthBarOverTime.fillAmount)
+            if (HealthBar.fillAmount < HealthBarOverTime.fillAmount)
             {
                 HealthBarOverTime.fillAmount -= DecrementOverTime * Time.deltaTime;
             }
@@ -162,7 +162,7 @@ public class PlayerStats : CharacterStats
 
         while (HealthBar.fillAmount < CurrentHealth / MaxHealth)
         {
-            if(HealthBar.fillAmount < HealthBarOverTime.fillAmount)
+            if (HealthBar.fillAmount < HealthBarOverTime.fillAmount)
             {
                 HealthBar.fillAmount += IncrementOverTime * Time.deltaTime;
             }
@@ -171,7 +171,7 @@ public class PlayerStats : CharacterStats
 
         while (StaminaBarOverTime.fillAmount != CurrentStamina / MaxStamina)
         {
-            if(StaminaBar.fillAmount < StaminaBarOverTime.fillAmount)
+            if (StaminaBar.fillAmount < StaminaBarOverTime.fillAmount)
             {
                 StaminaBarOverTime.fillAmount -= DecrementOverTime * Time.deltaTime;
             }

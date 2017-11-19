@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyStats : CharacterStats
 {
     public int AttackDamage;
+    public int HeavyAttackDamage;
 
     public int AttackStaminaUsage;
     public int HeavyAttackStaminaUsage;
@@ -14,63 +15,103 @@ public class EnemyStats : CharacterStats
     public bool DamageEnabled = false;
     public bool DamagedPlayerThisAttack = false;
 
+    public enum EnemyType { BabyMyconid, FayNPC }
+    public EnemyType TypeOfEnemy;
+
     public Animator PlayerAC;
 
-    public AudioSource HitSound;
+    private Animator _enemyAC;
 
     private PlayerAnimationEvents _playerAnimationEvents;
     private PlayerStats _playerStats;
+    private NPCEnemyAI _npcEnemyAI;
 
     private void Start ( )
     {
         _playerAnimationEvents = GameObject.Find ("Player").GetComponent<PlayerAnimationEvents> ();
         _playerStats = GameObject.Find ("Player").GetComponent<PlayerStats> ();
-        CharacterAC = GetComponent<Animator> ();      
+        CharacterAC = GetComponent<Animator> ();
+        _enemyAC = GetComponent<Animator> ();
+        _npcEnemyAI = GetComponent<NPCEnemyAI> ();
     }
 
-    private void OnTriggerEnter ( Collider other )    
+    private void OnTriggerEnter ( Collider other )
     {
-        if (other.gameObject.CompareTag("PlayerWeapon") && !HitThisAttack && _playerAnimationEvents.DamageEnabled && !Dead)
+        switch (TypeOfEnemy)
         {
-            HitThisAttack = true;
+            case EnemyType.BabyMyconid:
 
-            _playerAnimationEvents.EnemiesHitThisAttack.Add (this);
+                if (other.gameObject.CompareTag ("PlayerWeapon") && !HitThisAttack && _playerAnimationEvents.DamageEnabled && !Dead)
+                {
+                    HitThisAttack = true;
 
-            TakeDamage (_playerStats.Damage.GetValue());
-            HitSound.Play ();
-        }
+                    _playerAnimationEvents.EnemiesHitThisAttack.Add (this);
 
-        if(other.gameObject.CompareTag("Shield") && DamageEnabled && !DamagedPlayerThisAttack)
-        {
-            if (PlayerAC.GetBool ("IsBlocking") && PlayerAC.GetBool("ShieldEquipped"))
-            {
-                if (_playerStats.CurrentStamina >= AttackDamage)
+                    TakeDamage (_playerStats.Damage.GetValue ());
+                    HitSound.Play ();
+                }
+
+                if (other.gameObject.CompareTag ("Shield") && DamageEnabled && !DamagedPlayerThisAttack)
+                {
+                    if (PlayerAC.GetBool ("IsBlocking") && PlayerAC.GetBool ("ShieldEquipped"))
+                    {
+                        if (_playerStats.CurrentStamina >= AttackDamage)
+                        {
+                            DamagedPlayerThisAttack = true;
+
+                            _playerStats.TakeDamageWithStamina (AttackDamage);
+                        }
+                        else
+                        {
+                            DamagedPlayerThisAttack = true;
+
+                            float damage = AttackDamage - _playerStats.CurrentStamina;
+                            _playerStats.TakeDamageWithStamina (AttackDamage);
+                            _playerStats.TakeDamage ((int) damage);
+                        }
+                    }
+                    else
+                    {
+                        DamagedPlayerThisAttack = true;
+
+                        _playerStats.TakeDamage (AttackDamage);
+                    }
+                    PlayerAC.SetTrigger ("Hit");
+                }
+                else if (other.gameObject.CompareTag ("Player") && DamageEnabled && !DamagedPlayerThisAttack)
                 {
                     DamagedPlayerThisAttack = true;
 
-                    _playerStats.TakeDamageWithStamina (AttackDamage);
+                    _playerStats.TakeDamage (AttackDamage);
+
+                    PlayerAC.SetTrigger ("Hit");
                 }
-                else
+                break;
+
+            case EnemyType.FayNPC:
+
+                if (other.gameObject.CompareTag ("PlayerWeapon") && !HitThisAttack && _playerAnimationEvents.DamageEnabled && !Dead)
                 {
-                    DamagedPlayerThisAttack = true;
+                    if (_enemyAC.GetBool ("IsBlocking"))
+                    {
+                        ShieldHitSound.Play ();
+                        _enemyAC.SetTrigger ("Hit");                       
+                        PlayerAC.SetTrigger ("Stagger");
+                        _enemyAC.SetBool ("IsBlocking", false);
+                    }
+                    else
+                    {
+                        HitThisAttack = true;
 
-                    float damage = AttackDamage - _playerStats.CurrentStamina;
-                    _playerStats.TakeDamageWithStamina (AttackDamage);                    
-                    _playerStats.TakeDamage ((int)damage);
+                        _playerAnimationEvents.EnemiesHitThisAttack.Add (this);
+
+                        TakeDamage (_playerStats.Damage.GetValue ());
+                        _npcEnemyAI.HitCounter++;
+                        //Turn healthbar on
+                        HitSound.Play ();
+                    }
                 }
-            }
-            else
-            {
-                DamagedPlayerThisAttack = true;
-
-                _playerStats.TakeDamage (AttackDamage);
-            }
+                break;
         }
-        else if (other.gameObject.CompareTag ("Player") && DamageEnabled && !DamagedPlayerThisAttack)
-        {           
-            DamagedPlayerThisAttack = true;
-
-            _playerStats.TakeDamage (AttackDamage);            
-        }
-    }   
+    }
 }

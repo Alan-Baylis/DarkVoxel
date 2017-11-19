@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public enum SurfaceType { Grass, Stone }
+    public SurfaceType TypeOfSurface;
+
     public bool LockedOn = false;
-    public bool OnList = false;    
+    public bool OnList = false;
 
     private LockOnCamera _lockOnCamera;
 

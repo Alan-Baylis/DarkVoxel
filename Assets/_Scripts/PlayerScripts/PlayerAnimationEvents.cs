@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimationEvents : MonoBehaviour {
+public class PlayerAnimationEvents : MonoBehaviour
+{
 
     public GameObject LevelUpMedalion;
+    public GameObject HealParticles;
 
     public bool DamageEnabled = false;
     public bool CanGetDamaged = true;
 
-    public List<EnemyStats> EnemiesHitThisAttack = new List<EnemyStats>();
+    public List<EnemyStats> EnemiesHitThisAttack = new List<EnemyStats> ();
 
     private Animator _playerAC;
     private PlayerStats _playerStats;
@@ -30,7 +32,7 @@ public class PlayerAnimationEvents : MonoBehaviour {
         _soundManager = SoundManager.instance;
     }
 
-    public void DisableInput( )
+    public void DisableInput ( )
     {
         _playerAC.SetBool ("InputEnabled", false);      //disables input during rolling
         _playerAC.SetBool ("RollEnabled", false);       //disables rolling input during rolling
@@ -39,46 +41,46 @@ public class PlayerAnimationEvents : MonoBehaviour {
     public void EnableInput ( )
     {
         _playerAC.SetBool ("InputEnabled", true);       //enables input 
-    } 
-    
-    public void EnableRolling()
+    }
+
+    public void EnableRolling ( )
     {
         _playerAC.SetBool ("RollEnabled", true);        //enables rolling input
     }
 
-    public void StartRolling( )
+    public void StartRolling ( )
     {
         _playerAC.SetBool ("RollFinished", false);       //disables rolling in the middle of roll animation
         CanGetDamaged = false;
     }
-    
-    public void StopRolling( )
+
+    public void StopRolling ( )
     {
         _playerAC.SetBool ("RollFinished", true);
         CanGetDamaged = true;
     }
 
-    public void ResetRollAttack()
+    public void ResetRollAttack ( )
     {
         _playerAC.SetBool ("RollAttack", false);
     }
 
-    public void ResetAttack()
+    public void ResetAttack ( )
     {
         _playerAC.SetBool ("Attacking", false);
     }
 
-    public void ResetHeavyAttack()
+    public void ResetHeavyAttack ( )
     {
         _playerAC.SetBool ("HeavyAttacking", false);
     }
 
-    public void EnableDamage()                          //Enables dealing damage to enemies while certain frames of attack animation are playing
+    public void EnableDamage ( )                          //Enables dealing damage to enemies while certain frames of attack animation are playing
     {
         DamageEnabled = true;
     }
 
-    public void DisableDamage()                         //Disables accidental damage to enemies if player isn't attacking
+    public void DisableDamage ( )                         //Disables accidental damage to enemies if player isn't attacking
     {
         DamageEnabled = false;
 
@@ -89,12 +91,12 @@ public class PlayerAnimationEvents : MonoBehaviour {
         EnemiesHitThisAttack.Clear ();
     }
 
-    public void EnableStaminaGain()
+    public void EnableStaminaGain ( )
     {
         PlayerStats.instance.CanRegainStamina = true;
     }
 
-    public void DisableStaminaGainOnRoll()
+    public void DisableStaminaGainOnRoll ( )
     {
         if (_playerStats.CurrentStamina - _playerStats.RollStaminaUsage >= 0)
         {
@@ -125,7 +127,7 @@ public class PlayerAnimationEvents : MonoBehaviour {
         _playerStats.CanRegainStamina = false;
     }
 
-    public void DisableStaminaGainOnHeavyAttack ()
+    public void DisableStaminaGainOnHeavyAttack ( )
     {
         _playerAC.SetBool ("HeavyAttacking", true);
         _playerAC.SetBool ("AttackQeued", false);
@@ -142,31 +144,40 @@ public class PlayerAnimationEvents : MonoBehaviour {
         PlayerStats.instance.CanRegainStamina = false;
     }
 
-    public void ShowMedalion()
+    public void ShowMedalion ( )
     {
         LevelUpMedalion.SetActive (true);
+        Instantiate (HealParticles, transform.position, Quaternion.identity);
     }
 
-    public void HideMedalion()
+    public void HideMedalion ( )
     {
         LevelUpMedalion.SetActive (false);
+        _playerAC.SetBool ("Healing", false);
     }
 
-    public void Heal()
+    public void Heal ( )
     {
         _playerStats.Heal (_playerStats.HealthRecovered);
+        _playerStats.CurrentNumberOfRecoveries--;
+        _playerAC.SetBool ("Healing", true);
     }
 
-    public void PlayFootstepSound()
+    public void StopHealing ( )
     {
-        switch(_gameManager.TypeOfSurface)
+        _playerAC.SetBool ("Healing", false);
+    }
+
+    public void PlayFootstepSound ( )
+    {
+        switch (_gameManager.TypeOfSurface)
         {
-            case SurfaceType.grass:                
-                _soundManager.GrassFootstep.PlayOneShot (_soundManager.GrasFootsteps [_stepCycle]);                
+            case SurfaceType.grass:
+                _soundManager.GrassFootstep.PlayOneShot (_soundManager.GrasFootsteps [_stepCycle]);
                 break;
 
-            case SurfaceType.Stone:                
-                _soundManager.StoneFootstep.PlayOneShot (_soundManager.StoneFootsteps[_stepCycle]);
+            case SurfaceType.Stone:
+                _soundManager.StoneFootstep.PlayOneShot (_soundManager.StoneFootsteps [_stepCycle]);
                 break;
         }
 
@@ -183,7 +194,7 @@ public class PlayerAnimationEvents : MonoBehaviour {
         }
         else
         {
-            if(_stepCycle < 1)
+            if (_stepCycle < 1)
             {
                 _stepCycle++;
             }
@@ -194,7 +205,7 @@ public class PlayerAnimationEvents : MonoBehaviour {
         }
     }
 
-    public void PlaySwingSound()
+    public void PlaySwingSound ( )
     {
         _soundManager.SwordSwing.Play ();
     }
