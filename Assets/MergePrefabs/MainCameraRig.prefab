@@ -214,7 +214,7 @@ MonoBehaviour:
   _target: {fileID: 0}
   _autoTargetPlayer: 0
   _updateType: 1
-  UseJoystick: 1
+  UseJoystick: 0
   Pivot: {fileID: 4416533234070674}
   PlayerAC: {fileID: 0}
   _cameraMoveSpeed: 10
